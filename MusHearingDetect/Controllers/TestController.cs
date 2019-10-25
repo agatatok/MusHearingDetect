@@ -57,9 +57,8 @@ namespace MusHearingDetect.Controllers
         [HttpPost]
         public IActionResult BeginTest(Answer answer)
         {
-            string url = HttpContext.Request.Path;
-            int idn = int.Parse(url.Remove(0, url.LastIndexOf('/') + 1));
-            return RedirectToAction("BeginTest", new {id = idn+1});
+            int id = int.Parse(this.RouteData.Values["id"].ToString());
+            return RedirectToAction("BeginTest", new {id = id+1});
         }
     }
 }
