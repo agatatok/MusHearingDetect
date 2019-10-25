@@ -1,0 +1,62 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext"
+              rel="stylesheet">
+    </environment>
+
+</head>
+<body>
+<div class="topnavbar">
+    <ul style="font-size: medium">
+        <li><a href="Index.cshtml" style="padding: 10px 30px;">SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+    </ul>
+
+</div>
+<div class="container body-content">
+    @RenderBody()
+
+    <div class="question">
+        <p1>@RenderSection("questname")</p1><br>
+        <p2>@RenderSection("questdescription")</p2>
+    </div>
+
+    <embed src="~/Audio/UserAudio001.wav"
+           loop="true" autoplay="false" width="145" height="60" />
+
+    @*<div class="answs">
+            <div class="answbutton">
+                <a href="/Test/BeginTest">
+                    Odpowiedź 1
+                </a>
+            </div>
+
+            <div class="answbutton">
+                <a href="/Test/BeginTest">
+                    Odpowiedź 2
+                </a>
+            </div>
+        </div>*@
+    
+
+    <form method="post" action="@Context.Request.GetEncodedUrl()">
+        <button class="answbutton" name="lewy">Lewy</button>
+        <button>Lewy</button>
+        <button class="answbutton" name="prawy"><b>Prawy</b></button>
+    </form>
+
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+    </footer>
+</div>
+</body>
+</html>

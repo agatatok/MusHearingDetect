@@ -1,0 +1,18 @@
+﻿@*@model TModel*@
+@using MusHearingDetect.Models
+@model MusHearingDetect.Models.Question
+@{
+    Layout = "~/Views/Shared/_QuestionLayout.cshtml";
+
+}
+
+@section questname {
+    @Model.Title
+}
+@section questdescription {
+    @Model.Description
+}
+
+@*@section audiosrc{
+        @Model.Audio.Src
+    }*@

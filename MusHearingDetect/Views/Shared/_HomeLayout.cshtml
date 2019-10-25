@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext"
+              rel="stylesheet">
+    </environment>
+   
+</head>
+<body>
+
+    <div class="topnavbar">
+        <ul>
+            <li><a href="Index">SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+            <li style="float:right"><a href="Home/About">O pracy</a></li>
+        </ul>
+
+    </div>
+
+
+    <div class="container body-content">
+        @RenderBody()
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+        </footer>
+    </div>
+</body>
+</html>
+
