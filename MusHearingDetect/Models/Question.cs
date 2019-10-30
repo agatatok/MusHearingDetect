@@ -7,10 +7,9 @@ namespace MusHearingDetect.Models
 {
     public class Question
     {
-
-        public int Id { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public Audiofile Audio { get; set; }
+        public Answer FirstAnswer { get; set; }
+        public Answer SecondAnswer { get; set; }
     }
 }

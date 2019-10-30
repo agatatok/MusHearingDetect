@@ -7,5 +7,18 @@ namespace MusHearingDetect.Models
 {
     public class Answer
     {
+        public string AnswerTxt { get; set; }
+        public bool IsRight { get; set; }
+
+        public Answer()
+        {
+
+        }
+
+        public Answer(string AnswerTxt)
+        {
+            this.AnswerTxt = AnswerTxt;
+            this.IsRight = false;
+        }
     }
 }

@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -12,6 +13,14 @@ namespace MusHearingDetect.Controllers
 {
     public class TestController : Controller
     {
+
+        private readonly IHostingEnvironment env;
+        public TestController(IHostingEnvironment env)
+        {
+            this.env = env;
+        }
+
+
         public IActionResult Index()
         {
             return View();
@@ -20,45 +29,52 @@ namespace MusHearingDetect.Controllers
         [HttpGet]
         public IActionResult BeginTest(int? id)
         {
-            if (id == 1 || id == 2 || id == 3)
+            if (id != null)
             {
-                Question question1 = new Question
-                {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
-                    Title = "Wesoły czy smutny?",
-                    Audio = new Audiofile(2)
-
-                };
-
-                return View(question1);
-            }
-
-            else if (id == 4 || id == 5 || id == 6)
-            {
-                Question question2 = new Question
-                {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                    Title = "W górę czy w dół?"
-                };
-                return View(question2);
+                var question = AudioRepo.audiofiles[(int)id - 1];
+                ViewBag.AudioSrc = question.Src;
+                return View(question);
             }
             else
             {
-                Question question3 = new Question
-                {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest wysoki (cienki), czy niski (gruby).",
-                    Title = "Wysoki czy niski?"
-                };
-                return View(question3);
+                return RedirectToAction("Index", "Home");
             }
         }
+    
 
 
         [HttpPost]
-        public IActionResult BeginTest(Answer answer)
+        public IActionResult BeginTest(Question question)
         {
+            Question quest = question;
+            if (quest.FirstAnswer!=null)
+            {
+                UserAnswers.AddAnswer(quest.FirstAnswer);
+            }
+            else
+            {
+                UserAnswers.AddAnswer(quest.SecondAnswer);
+            }
+
+            var answs = UserAnswers.Answers;
+
             int id = int.Parse(this.RouteData.Values["id"].ToString());
-            return RedirectToAction("BeginTest", new {id = id+1});
+            if (id < 15)
+            {
+                return RedirectToAction("BeginTest", new {id = id+1});
+            }
+            else
+            {
+                return RedirectToAction("Result");
+            }
+            
         }
+
+
+        public IActionResult YourResult()
+        {
+            return View();
+        }
+
     }
 }

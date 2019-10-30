@@ -1,18 +1,18 @@
-﻿@*@model TModel*@
-@using MusHearingDetect.Models
-@model MusHearingDetect.Models.Question
+﻿@model MusHearingDetect.Models.Audiofile
 @{
     Layout = "~/Views/Shared/_QuestionLayout.cshtml";
 
 }
 
 @section questname {
-    @Model.Title
+    @Model.Question.Title
 }
 @section questdescription {
-    @Model.Description
+    @Model.Question.Description
 }
-
-@*@section audiosrc{
-        @Model.Audio.Src
-    }*@
+@section firstAnsw {
+    @Model.Question.FirstAnswer.AnswerTxt
+}
+@section secondAnsw {
+    @Model.Question.SecondAnswer.AnswerTxt
+}
