@@ -8,6 +8,7 @@ namespace MusHearingDetect.Models
 {
     public static class AudioRepo
     {
+        //question patterns
         public static Audiofile durmoll = new Audiofile()
         {
             Question = new Question()
@@ -77,37 +78,49 @@ namespace MusHearingDetect.Models
             },
         };
 
+
+        //list of test questions
         public static List<Audiofile> audiofiles = new List<Audiofile>()
         {
             new Audiofile(durmoll, 1)
             {
-
+                
             },
-            new Audiofile(updown, 2)
+            new Audiofile(durmoll, 2)
             {
 
             },
-            new Audiofile()
+            new Audiofile(durmoll, 3)
             {
-                Id=3,
-                Question = new Question()
-                {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                    Title = "W górę czy w dół?",
-                    FirstAnswer = new Answer("W górę"),
-                    SecondAnswer = new Answer("W dół"){IsRight = true}
-                },
-                Src = Audiofile.GetSrc(3)
 
-            }
+            },
+            new Audiofile(durmoll, 4)
+            {
 
+            },
+            new Audiofile(durmoll, 5)
+            {
+
+            },
+            new Audiofile(highlow, 6)
+            {
+
+            },
+            new Audiofile(highlow, 7)
+            {
+
+            },
+            new Audiofile(highlow, 8)
+            {
+
+            },
         
         };
-        
+
         //public static IEnumerable<Audiofile> Audiofiles
         //{
         //    get { return audiofiles; }
         //}
-        
+
     }
 }

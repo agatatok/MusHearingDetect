@@ -1,8 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http.Extensions
 @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
 @{
-    var audiosrc = @ViewBag.AudioSrc;
-    var path = env.WebRootFileProvider.GetFileInfo(audiosrc)?.Name;
+    var path = env.WebRootFileProvider.GetFileInfo(ViewBag.AudioSrc)?.Name;
 }
 
 <!DOCTYPE html>

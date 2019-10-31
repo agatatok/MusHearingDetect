@@ -65,7 +65,7 @@ namespace MusHearingDetect.Controllers
             }
             else
             {
-                return RedirectToAction("Result");
+                return RedirectToAction("YourResult");
             }
             
         }
@@ -73,6 +73,7 @@ namespace MusHearingDetect.Controllers
 
         public IActionResult YourResult()
         {
+            //todo: view with result
             return View();
         }
 
