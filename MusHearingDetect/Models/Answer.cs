@@ -12,13 +12,12 @@ namespace MusHearingDetect.Models
 
         public Answer()
         {
-
         }
 
-        public Answer(string AnswerTxt)
+        public Answer(string AnswerTxt, bool isRight)
         {
             this.AnswerTxt = AnswerTxt;
-            this.IsRight = false;
+            this.IsRight = isRight;
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿@model MusHearingDetect.Models.Audiofile
 @{
     Layout = "~/Views/Shared/_QuestionLayout.cshtml";
-
 }
 
 @section questname {
@@ -10,9 +9,19 @@
 @section questdescription {
     @Model.Question.Description
 }
-@section firstAnsw {
-    @Model.Question.FirstAnswer.AnswerTxt
+
+@section Answers{
+<div>
+    @using (Html.BeginForm("BeginTest", "Test", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Question.FirstAnswer.IsRight)
+        <input type="submit" value="@Model.Question.FirstAnswer.AnswerTxt" class="answbutton"/>
+    }
+    @using (Html.BeginForm("BeginTest", "Test", FormMethod.Post))
+    {
+        @Html.HiddenFor(m => m.Question.SecondAnswer.IsRight)
+        <input type="submit" value="@Model.Question.SecondAnswer.AnswerTxt" class="answbutton" />
+    }
+</div>
 }
-@section secondAnsw {
-    @Model.Question.SecondAnswer.AnswerTxt
-}
+

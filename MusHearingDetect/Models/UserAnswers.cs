@@ -7,14 +7,14 @@ namespace MusHearingDetect.Models
 {
     public static class UserAnswers
     {
-        private static List<Answer> answers = new List<Answer>();
+        private static List<bool> answers = new List<bool>();
 
-        public static IEnumerable<Answer> Answers
+        public static IEnumerable<bool> Answers
         {
             get { return answers; }
         }
 
-        public static void AddAnswer(Answer answer)
+        public static void AddAnswer(bool answer)
         {
             answers.Add(answer);
         }
