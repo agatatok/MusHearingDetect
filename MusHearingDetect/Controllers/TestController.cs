@@ -42,20 +42,21 @@ namespace MusHearingDetect.Controllers
 
 
         [HttpPost]
-        public IActionResult BeginTest(Audiofile audiofile)
+        public IActionResult BeginTest(string firstbtn, string secondbtn)
         {
-            if (audiofile.Question.FirstAnswer != null)
+            int id = int.Parse(this.RouteData.Values["id"].ToString());
+            var audiofile = AudioRepo.Audiofiles[id - 1];
+            if (firstbtn!=null)
             {
                 UserAnswers.AddAnswer(audiofile.Question.FirstAnswer.IsRight);
             }
-            else
+            if(secondbtn!=null)
             {
                 UserAnswers.AddAnswer(audiofile.Question.SecondAnswer.IsRight);
             }
-
+            
             var answs = UserAnswers.Answers;
-
-            int id = int.Parse(this.RouteData.Values["id"].ToString());
+            
             if (id < 10)
             {
                 return RedirectToAction("BeginTest", new { id = id + 1 });

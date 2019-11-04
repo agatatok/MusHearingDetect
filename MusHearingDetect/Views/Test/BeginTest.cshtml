@@ -11,16 +11,11 @@
 }
 
 @section Answers{
-<div>
+<div class="answs">
     @using (Html.BeginForm("BeginTest", "Test", FormMethod.Post))
     {
-        @Html.HiddenFor(m => m.Question.FirstAnswer.IsRight)
-        <input type="submit" value="@Model.Question.FirstAnswer.AnswerTxt" class="answbutton"/>
-    }
-    @using (Html.BeginForm("BeginTest", "Test", FormMethod.Post))
-    {
-        @Html.HiddenFor(m => m.Question.SecondAnswer.IsRight)
-        <input type="submit" value="@Model.Question.SecondAnswer.AnswerTxt" class="answbutton" />
+        <input type="submit" name ="firstbtn" value="@Model.Question.FirstAnswer.AnswerTxt" class="answbutton" />
+        <input type="submit" name ="secondbtn" value="@Model.Question.SecondAnswer.AnswerTxt" class="answbutton" />
     }
 </div>
 }

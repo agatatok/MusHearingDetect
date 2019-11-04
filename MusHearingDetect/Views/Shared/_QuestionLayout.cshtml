@@ -36,10 +36,10 @@
         <p2>@RenderSection("questdescription")</p2>
     </div>
 
-    <audio id="audio" src="~/audio/@path"></audio>
-    <a onclick="playSound();" id="">
-        <i class="fas fa-play" style="font-size: 90px; margin: 0 50px"></i>
-    </a>
+        <audio id="audio" src="~/audio/@path"></audio>
+        <a onclick="playSound();" id="audio">
+            <i class="fas fa-play" style="font-size: 90px; margin: 0 auto; display:flex"></i>
+        </a>
 
     <script>
         function playSound() {
@@ -48,7 +48,8 @@
         }
     </script>
 
-   @RenderSection("Answers")
+    @RenderSection("Answers")
+
 
     <footer>
         <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
