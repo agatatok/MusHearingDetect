@@ -13,13 +13,12 @@ namespace MusHearingDetect.Controllers
 {
     public class TestController : Controller
     {
-
+ 
         private readonly IHostingEnvironment env;
         public TestController(IHostingEnvironment env)
         {
             this.env = env;
         }
-
 
         public IActionResult Index()
         {
@@ -31,48 +30,54 @@ namespace MusHearingDetect.Controllers
         {
             if (id != null)
             {
-                var question = AudioRepo.audiofiles[(int)id - 1];
-                ViewBag.AudioSrc = question.Src;
-                return View(question);
+                var audiofile = AudioRepo.Audiofiles[(int)id - 1];
+                ViewBag.AudioSrc = audiofile.Src;
+                return View(audiofile);
             }
             else
             {
                 return RedirectToAction("Index", "Home");
             }
         }
-    
 
 
         [HttpPost]
-        public IActionResult BeginTest(Question question)
+        public IActionResult BeginTest(string firstbtn, string secondbtn)
         {
-            Question quest = question;
-            if (quest.FirstAnswer!=null)
-            {
-                UserAnswers.AddAnswer(quest.FirstAnswer);
-            }
-            else
-            {
-                UserAnswers.AddAnswer(quest.SecondAnswer);
-            }
-
-            var answs = UserAnswers.Answers;
-
             int id = int.Parse(this.RouteData.Values["id"].ToString());
-            if (id < 15)
+            var audiofile = AudioRepo.Audiofiles[id - 1];
+            if (firstbtn!=null)
             {
-                return RedirectToAction("BeginTest", new {id = id+1});
+                UserAnswers.AddAnswer(audiofile.Question.FirstAnswer.IsRight);
             }
-            else
+            if(secondbtn!=null)
             {
-                return RedirectToAction("Result");
+                UserAnswers.AddAnswer(audiofile.Question.SecondAnswer.IsRight);
             }
             
-        }
+            var answs = UserAnswers.Answers;
+            
+            if (id < 10)
+            {
+                return RedirectToAction("BeginTest", new { id = id + 1 });
+            }
+            else
+            {
+                return RedirectToAction("YourResult");
+            }
 
+        }
+        public IActionResult AddAnswer(bool IsRight)
+        {
+            bool ir = IsRight;
+
+                return RedirectToAction("YourResult");
+           
+        }
 
         public IActionResult YourResult()
         {
+            //todo: view with result
             return View();
         }
 

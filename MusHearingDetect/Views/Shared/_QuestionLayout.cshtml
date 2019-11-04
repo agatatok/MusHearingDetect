@@ -1,8 +1,7 @@
 ﻿@using Microsoft.AspNetCore.Http.Extensions
 @inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
 @{
-    var audiosrc = @ViewBag.AudioSrc;
-    var path = env.WebRootFileProvider.GetFileInfo(audiosrc)?.Name;
+    var path = env.WebRootFileProvider.GetFileInfo(ViewBag.AudioSrc)?.Name;
 }
 
 <!DOCTYPE html>
@@ -36,11 +35,11 @@
         <p1>@RenderSection("questname")</p1><br>
         <p2>@RenderSection("questdescription")</p2>
     </div>
-    
-    <audio id="audio" src="~/audio/@path"></audio>
-    <a onclick="playSound();" id="">
-        <i class="fas fa-play" style="font-size: 90px; margin: 0 50px"></i>
-    </a>
+
+        <audio id="audio" src="~/audio/@path"></audio>
+        <a onclick="playSound();" id="audio">
+            <i class="fas fa-play" style="font-size: 90px; margin: 0 auto; display:flex"></i>
+        </a>
 
     <script>
         function playSound() {
@@ -49,13 +48,8 @@
         }
     </script>
 
+    @RenderSection("Answers")
 
-    <div class="answs">
-        <form method="post" action="@Context.Request.GetEncodedUrl()">
-            <button class="answbutton" name="Question.FirstAnswer.AnswerTxt" value="first">@RenderSection("firstAnsw")</button>
-            <button class="answbutton" name="Question.SecondAnswer.AnswerTxt" value="second">@RenderSection("secondAnsw")</button>
-        </form>
-    </div>
 
     <footer>
         <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>

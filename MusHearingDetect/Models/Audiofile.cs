@@ -17,19 +17,14 @@ namespace MusHearingDetect.Models
         }
         public Audiofile(int Id)
         {
-            this.Src = GetSrc(Id);
-        }
-
-        public Audiofile(Audiofile audiofile, int Id)
-        {
             this.Id = Id;
-            this.Question = audiofile.Question;
             this.Src = GetSrc(Id);
         }
+       
         public static string GetSrc(int Id)
         {
             char pad = '0';
-            return String.Concat("~/audio/UserAudio", Id.ToString().PadLeft(3, pad), ".wav");
+            return String.Concat("~/audio/Audio", Id.ToString().PadLeft(3, pad), ".wav");
         }
     }
 }

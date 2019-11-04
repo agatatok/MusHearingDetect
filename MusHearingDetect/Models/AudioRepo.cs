@@ -8,106 +8,123 @@ namespace MusHearingDetect.Models
 {
     public static class AudioRepo
     {
-        public static Audiofile durmoll = new Audiofile()
+        
+        public static IList<Audiofile> Audiofiles = new List<Audiofile>()
         {
-            Question = new Question()
+            new Audiofile(1)
             {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
-                Title = "Wesoły czy smutny?",
-                FirstAnswer = new Answer("Wesoły"),
-                SecondAnswer = new Answer("Smutny")
-            },
-        };
-        public static Audiofile updown = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                Title = "W górę czy w dół?",
-                FirstAnswer = new Answer("W górę"),
-                SecondAnswer = new Answer("W dół")
-            },
-        };
-        public static Audiofile highlow = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
-                Title = "Niski czy wysoki?",
-                FirstAnswer = new Answer("Niski"),
-                SecondAnswer = new Answer("Wysoki")
-            },
-        };
-        public static Audiofile soundsnum = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa"),
-                SecondAnswer = new Answer("Więcej niż dwa")
-            },
-        };
-        public static Audiofile samemelody = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrań, a następnie określ czy wysłuchane melodie są jednakowe, czy różnią się od siebie.",
-                Title = "Jednakowe czy różne?",
-                FirstAnswer = new Answer("Jednakowe"),
-                SecondAnswer = new Answer("Różne")
-            },
-        };
-        public static Audiofile higher = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrania, a następnie określ, który dźwięk był wyższy (cienszy).",
-                Title = "Który wyższy?",
-                FirstAnswer = new Answer("Pierwszy"),
-                SecondAnswer = new Answer("Drugi")
-            },
-        };
-        public static Audiofile sing = new Audiofile()
-        {
-            Question = new Question()
-            {
-                Description = "Posłuchaj nagrania, a następnie przyciśnij przycisk nagrywania i zaśpiewaj wysłuchany dźwięk.",
-                Title = "Powtórz dźwięk"
-            },
-        };
-
-        public static List<Audiofile> audiofiles = new List<Audiofile>()
-        {
-            new Audiofile(durmoll, 1)
-            {
-
-            },
-            new Audiofile(updown, 2)
-            {
-
-            },
-            new Audiofile()
-            {
-                Id=3,
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                    Title = "W górę czy w dół?",
-                    FirstAnswer = new Answer("W górę"),
-                    SecondAnswer = new Answer("W dół"){IsRight = true}
-                },
-                Src = Audiofile.GetSrc(3)
-
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Title = "Wesoły czy smutny?",
+                    FirstAnswer = new Answer("Wesoły", true),
+                    SecondAnswer = new Answer("Smutny", false)
+                }
+            },
+            new Audiofile(2)
+            {
+                Question = new Question()
+                {
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Title = "Wesoły czy smutny?",
+                    FirstAnswer = new Answer("Wesoły", true),
+                    SecondAnswer = new Answer("Smutny", false)
+                }
+            },
+            new Audiofile(3)
+            {
+                Question = new Question()
+                {
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Title = "Wesoły czy smutny?",
+                    FirstAnswer = new Answer("Wesoły", false),
+                    SecondAnswer = new Answer("Smutny", true)
+                }
+            },
+            new Audiofile(4)
+            {
+                Question = new Question()
+                {
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Title = "Wesoły czy smutny?",
+                    FirstAnswer = new Answer("Wesoły", false),
+                    SecondAnswer = new Answer("Smutny", true)
+                }
+            },
+            new Audiofile(5)
+            {
+                Question = new Question()
+                {
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Title = "Wesoły czy smutny?",
+                    FirstAnswer = new Answer("Wesoły", true),
+                    SecondAnswer = new Answer("Smutny", false)
+                }
+            },
+            new Audiofile(6)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
+                Title = "W górę czy w dół?",
+                FirstAnswer = new Answer("W górę", true),
+                SecondAnswer = new Answer("W dół", false)
+                }
+            },
+            new Audiofile(7)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
+                Title = "Niski czy wysoki?",
+                FirstAnswer = new Answer("Niski", true),
+                SecondAnswer = new Answer("Wysoki", false)
+                }
+            },
+            new Audiofile(8)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
+                Title = "Ile słyszysz dźwięków?",
+                FirstAnswer = new Answer("Dwa", true),
+                SecondAnswer = new Answer("Więcej niż dwa" ,false)
+                }
+            },
+            new Audiofile(9)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrań, a następnie określ czy wysłuchane melodie są jednakowe, czy różnią się od siebie.",
+                Title = "Jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe",true),
+                SecondAnswer = new Answer("Różne", false)
+                }   
+            },
+            new Audiofile(10)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrania, a następnie określ, który dźwięk był wyższy (cienszy).",
+                Title = "Który wyższy?",
+                FirstAnswer = new Answer("Pierwszy", true),
+                SecondAnswer = new Answer("Drugi", false)
+                }
+            },
+            new Audiofile(11)
+            {
+                Question = new Question()
+                {
+                Description = "Posłuchaj nagrania, a następnie przyciśnij przycisk nagrywania i zaśpiewaj wysłuchany dźwięk.",
+                Title = "Powtórz dźwięk"
+                }
             }
-
-        
         };
-        
+
         //public static IEnumerable<Audiofile> Audiofiles
         //{
         //    get { return audiofiles; }
         //}
-        
+
     }
 }

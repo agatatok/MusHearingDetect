@@ -143,7 +143,7 @@ footer {
     font-size: 20px;
     color: #ffd166;
     text-decoration: none;
-    
+    font-family: 'Comfortaa';
 }
 
     .answbutton:hover {
@@ -160,6 +160,7 @@ footer {
         font-size: 20px;
         color: #ffd166;
         text-decoration: none;
+        font-family: 'Comfortaa';
     }
 
 .answs {
@@ -167,13 +168,8 @@ footer {
     margin: 0 auto;
     display: flex;
 }
-button {
-    color: #ffd166;
-    background-color: #073B4C;
-    height: 4em;
-    width: 10em;
-    font-family: 'Comfortaa'
+
+#audio{
+    margin: 0 auto;
+    display:flex;
 }
-    button:hover {
-        background-color: #118AB2;
-    }
