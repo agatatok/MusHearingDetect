@@ -1,0 +1,37 @@
+﻿
+@{
+    Layout = null;
+    ViewData["Title"] = "Test";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext"
+              rel="stylesheet">
+
+    </environment>
+
+</head>
+<body>
+    <div id="controls">
+        <button id="recordButton">Record</button>
+        @*<button id="pauseButton" disabled>Pause</button>*@
+        <button id="stopButton" disabled>Stop</button>
+    </div>
+    <div id="formats">Format: start recording to see sample rate</div>
+    <h3>Recordings</h3>
+    <ol id="recordingsList"></ol>
+
+
+    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+    <script src="~/js/app.js"></script>
+
+</body>
+</html>

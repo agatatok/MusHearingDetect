@@ -32,7 +32,14 @@ namespace MusHearingDetect.Controllers
             {
                 var audiofile = AudioRepo.Audiofiles[(int)id - 1];
                 ViewBag.AudioSrc = audiofile.Src;
+                if(id==19)
+                {
+                    return View("SingQuestion", audiofile);
+                }
+
                 return View(audiofile);
+                
+                
             }
             else
             {
@@ -50,35 +57,29 @@ namespace MusHearingDetect.Controllers
             {
                 UserAnswers.AddAnswer(audiofile.Question.FirstAnswer.IsRight);
             }
-            if(secondbtn!=null)
+            if (secondbtn!=null)
             {
                 UserAnswers.AddAnswer(audiofile.Question.SecondAnswer.IsRight);
             }
             
             var answs = UserAnswers.Answers;
             
-            if (id < 10)
+            
+            if (id < 18)
             {
                 return RedirectToAction("BeginTest", new { id = id + 1 });
             }
-            else
             {
                 return RedirectToAction("YourResult");
             }
 
-        }
-        public IActionResult AddAnswer(bool IsRight)
-        {
-            bool ir = IsRight;
-
-                return RedirectToAction("YourResult");
-           
         }
 
         public IActionResult YourResult()
         {
-            //todo: view with result
+            ViewBag.Result = UserAnswers.CalculateResult();
             return View();
+            
         }
 
     }

@@ -18,5 +18,9 @@ namespace MusHearingDetect.Models
         {
             answers.Add(answer);
         }
+        public static double CalculateResult()
+        {
+            return Math.Round((double)answers.Count(a => a) / (double)answers.Count*100);
+        }
     }
 }
