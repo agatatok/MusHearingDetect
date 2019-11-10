@@ -199,24 +199,14 @@ namespace MusHearingDetect.Models
                 Title = "Powtórz dźwięk"
                 }
             },
-            new Audiofile()
-            {
-                Question = new Question()
-                {
-                Description = "Posłuchaj nagrania, a następnie określ, który dźwięk był wyższy (cienszy).",
-                Title = "Który wyższy?",
-                FirstAnswer = new Answer("Pierwszy", true),
-                SecondAnswer = new Answer("Drugi", false)
-                }
-            },
-            new Audiofile()
+            new Audiofile(20)
             {
                 Question = new Question()
                 {
                 Description = "Posłuchaj nagrania, a następnie przyciśnij przycisk nagrywania i zaśpiewaj wysłuchany dźwięk.",
                 Title = "Powtórz dźwięk"
                 }
-            }
+            },
         };
 
         //public static IEnumerable<Audiofile> Audiofiles

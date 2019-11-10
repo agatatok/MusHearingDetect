@@ -13,7 +13,7 @@ namespace MusHearingDetect.Controllers
 {
     public class TestController : Controller
     {
- 
+         
         private readonly IHostingEnvironment env;
         public TestController(IHostingEnvironment env)
         {
@@ -31,8 +31,10 @@ namespace MusHearingDetect.Controllers
             if (id != null)
             {
                 var audiofile = AudioRepo.Audiofiles[(int)id - 1];
+                ViewBag.Id = id;
                 ViewBag.AudioSrc = audiofile.Src;
-                if(id==19)
+                ViewBag.Number = $"{id}/{AudioRepo.Audiofiles.Count}";
+                if(id==19 || id==20)
                 {
                     return View("SingQuestion", audiofile);
                 }
@@ -65,16 +67,34 @@ namespace MusHearingDetect.Controllers
             var answs = UserAnswers.Answers;
             
             
-            if (id < 18)
+            if (id < 21)
             {
-                return RedirectToAction("BeginTest", new { id = id + 1 });
+                return RedirectToAction("BeginTest", new { Id = id + 1 });
             }
+            else
             {
                 return RedirectToAction("YourResult");
             }
 
         }
 
+
+        [HttpPost]
+        public IActionResult SingQuestion(int Id, string Src)
+        {
+
+            if (Id==19)
+            {
+                Sound sound = new Sound() { Source = Src };
+                return RedirectToAction("BeginTest", new { Id = Id + 1 });
+            }
+            {
+                return RedirectToAction("YourResult");
+            }
+        }
+
+
+        
         public IActionResult YourResult()
         {
             ViewBag.Result = UserAnswers.CalculateResult();

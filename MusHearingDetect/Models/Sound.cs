@@ -2,13 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using NAudio.Wave;
 
 namespace MusHearingDetect.Models
 {
-    public class Recording
+    public class Sound
     {
-        public int id;
-        public string url;
+        public string Source;
+        
     }
 }

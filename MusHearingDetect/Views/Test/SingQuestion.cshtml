@@ -1,7 +1,10 @@
-﻿
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
+@model Audiofile
 @{
     Layout = null;
     ViewData["Title"] = "Test";
+    var path = env.WebRootFileProvider.GetFileInfo(ViewBag.AudioSrc)?.Name;
 }
 <!DOCTYPE html>
 <html>
@@ -20,18 +23,64 @@
 
 </head>
 <body>
-    <div id="controls">
-        <button id="recordButton">Record</button>
-        @*<button id="pauseButton" disabled>Pause</button>*@
-        <button id="stopButton" disabled>Stop</button>
+    <div class="topnavbar">
+        <ul style="font-size: medium">
+            <li><a href="Index.cshtml" style="padding: 10px 30px;">SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+        </ul>
+
     </div>
-    <div id="formats">Format: start recording to see sample rate</div>
-    <h3>Recordings</h3>
-    <ol id="recordingsList"></ol>
+    <div class="container body-content">
+        <div class="question">
+            <p1>@Model.Question.Title</p1><br>
+            <p2>@Model.Question.Description</p2>
+        </div>
+
+        <audio id="audio" src="~/audio/@path"></audio>
+
+        <a onclick="playSound();">
+            <i class="fas fa-play fa-5x" style="margin: 0 auto; display:flex"></i>
+        </a>
+
+        <script>
+            function playSound() {
+                var sound = document.getElementById("audio");
+                sound.play();
+            }
+        </script>
+
+        <div id="controls">
+            <button id="recordButton">Record</button>
+            <button id="stopButton" disabled>Stop</button>
+        </div>
 
 
-    <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-    <script src="~/js/app.js"></script>
+        <ul id="recordingsList"></ul>
+        <div id="recordinglst">
 
+        </div>
+
+
+
+
+        <div class="answs">
+            @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
+            {
+                <input type="hidden" name="Id" value="@ViewBag.Id" />
+                <input type="hidden" name="Src" id="recsrc" />
+                <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton" disabled="disabled" />
+            }
+        
+        </div>
+
+
+
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+        </footer>
+
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+        <script src="~/js/sing.js"></script>
+    </div>
 </body>
 </html>
