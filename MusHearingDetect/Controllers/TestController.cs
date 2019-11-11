@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite.Internal.PatternSegments;
 using MusHearingDetect.Models;
+using System.IO;
+using MusHearingDetect.Models.VoiceRecognition;
+using NAudio.Wave;
 
 namespace MusHearingDetect.Controllers
 {
@@ -85,7 +88,20 @@ namespace MusHearingDetect.Controllers
 
             if (Id==19)
             {
-                Sound sound = new Sound() { Source = Src };
+                StreamWriter sw = new StreamWriter("log.txt");
+
+                var waveResampler = new Resampler();
+                Models.VoiceRecognition.Sound freqencyDetector = new Models.VoiceRecognition.Sound();
+                List<float> result = freqencyDetector.DetectFrequency(waveResampler);
+
+                for (int i = 0; i < result.Count; i++)
+                {
+                    sw.Write("Frequ " + result[i] + "\r\n");
+                }
+                
+
+                sw.Flush();
+                sw.Close();
                 return RedirectToAction("BeginTest", new { Id = Id + 1 });
             }
             {
@@ -100,6 +116,11 @@ namespace MusHearingDetect.Controllers
             ViewBag.Result = UserAnswers.CalculateResult();
             return View();
             
+        }
+
+        public IActionResult Sing()
+        {
+            return View();
         }
 
     }

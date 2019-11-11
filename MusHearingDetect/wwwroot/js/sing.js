@@ -24,22 +24,24 @@ function startRecording() {
 		https://addpipe.com/blog/audio-constraints-getusermedia/
 	*/
 
-	var constraints = {
-		audio: { sampleRate: 44100}, video: false
-	}
-
 	recordButton.disabled = true;
 	stopButton.disabled = false
 
 
-	navigator.mediaDevices.getUserMedia(constraints).then(function (stream) {
+
+	navigator.mediaDevices.getUserMedia({
+		audio: {
+			sampleRate: 44100,
+			channelCount: 1
+		}
+	}).then(function (stream) {
 		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
 
 		audioContext = new AudioContext();
 		gumStream = stream;
 		input = audioContext.createMediaStreamSource(stream);
 
-		rec = new Recorder(input, { numChannels: 2 })
+		rec = new Recorder(input, { numChannels: 1 })
 
 		//start the recording
 		rec.record();
@@ -82,7 +84,7 @@ function createDownloadLink(blob) {
 	link.href = url;
 	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
 	link.innerHTML = "Akceptuj";
-	link.addEventListener("click", downloadfile);
+	link.addEventListener("click", makevisible);
 
 	document.getElementById("recsrc").value = link.download;
 
@@ -95,7 +97,7 @@ function createDownloadLink(blob) {
 	recordinglst.appendChild(link);
 	
 }
-function downloadfile() {
+function makevisible() {
 	var nextbtn = document.getElementById('nextbtn');
-	nextbtn.disabled = false;
-}
+	nextbtn.style.visibility = "visible";
+} 
