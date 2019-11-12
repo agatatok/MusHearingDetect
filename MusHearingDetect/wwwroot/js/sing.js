@@ -34,8 +34,8 @@ function startRecording() {
 			sampleRate: 44100,
 			channelCount: 1
 		}
-	}).then(function (stream) {
-		console.log("getUserMedia() success, stream created, initializing Recorder.js ...");
+    }).then(function (stream) {
+
 
 		audioContext = new AudioContext();
 		gumStream = stream;
@@ -44,8 +44,8 @@ function startRecording() {
 		rec = new Recorder(input, { numChannels: 1 })
 
 		//start the recording
-		rec.record();
-		console.log("Recording started");
+        rec.record();
+
 
 	}).catch(function (err) {
 		//enable the record button if getUserMedia() fails

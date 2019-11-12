@@ -15,8 +15,8 @@ namespace MusHearingDetect.Models.VoiceRecognition
         public Autocorrelator(int sampleRate)
         {
             this.sampleRate = (float)sampleRate;
-            int minFreq = 150;
-            int maxFreq = 500;
+            int minFreq = 220;
+            int maxFreq = 550;
 
             this.maxOffset = sampleRate / minFreq;
             this.minOffset = sampleRate / maxFreq;

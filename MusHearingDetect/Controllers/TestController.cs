@@ -9,7 +9,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Rewrite.Internal.PatternSegments;
 using MusHearingDetect.Models;
 using System.IO;
-using MusHearingDetect.Models.VoiceRecognition;
+using MusHearingDetect.Models.SoundEvaluation;
 using NAudio.Wave;
 
 namespace MusHearingDetect.Controllers
@@ -86,26 +86,44 @@ namespace MusHearingDetect.Controllers
         public IActionResult SingQuestion(int Id, string Src)
         {
 
-            if (Id==19)
+            
+            StreamWriter sw = new StreamWriter("log.txt");
+
+            var waveResampler = new Resampler();
+            Models.VoiceRecognition.Sound freqencyDetector = new Models.VoiceRecognition.Sound();
+            List<float> result = freqencyDetector.DetectFrequency(waveResampler);
+
+            float mainFrequency = FrequencyFilter.CalculateMainFreq(result);
+            sw.WriteLine($"MEAN: {mainFrequency.ToString()}");
+            
+
+
+
+            for (int i = 0; i < result.Count; i++)
             {
-                StreamWriter sw = new StreamWriter("log.txt");
-
-                var waveResampler = new Resampler();
-                Models.VoiceRecognition.Sound freqencyDetector = new Models.VoiceRecognition.Sound();
-                List<float> result = freqencyDetector.DetectFrequency(waveResampler);
-
-                for (int i = 0; i < result.Count; i++)
-                {
-                    sw.Write("Frequ " + result[i] + "\r\n");
-                }
+                sw.Write("Frequ " + result[i] + "\r\n");
+            }
                 
 
-                sw.Flush();
-                sw.Close();
+            sw.Flush();
+            sw.Close();
+
+            if (Id == 19)
+            {
+                FrequencyClassificator FreqClass = new FrequencyClassificator(330);
+                UserAnswers.AddAnswer(FreqClass.Validate(mainFrequency));
+                var answs = UserAnswers.Answers;
                 return RedirectToAction("BeginTest", new { Id = Id + 1 });
             }
+            else if (Id == 20)
             {
+                FrequencyClassificator FreqClass = new FrequencyClassificator(440);
+                UserAnswers.AddAnswer(FreqClass.Validate(mainFrequency));
                 return RedirectToAction("YourResult");
+            }
+            else
+            {
+                return null;
             }
         }
 

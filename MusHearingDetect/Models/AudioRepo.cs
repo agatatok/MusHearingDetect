@@ -8,7 +8,7 @@ namespace MusHearingDetect.Models
 {
     public static class AudioRepo
     {
-        
+
         public static IList<Audiofile> Audiofiles = new List<Audiofile>()
         {
             new Audiofile(1)
