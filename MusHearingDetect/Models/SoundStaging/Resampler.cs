@@ -12,10 +12,21 @@ namespace MusHearingDetect.Models
     public class Resampler
     {
         private long waveBufferSize;
-
-        public IWaveProvider Convert(string path)
+        public long WaveBufferSize { get { return waveBufferSize; } }
+        private string wavFilePath;
+        public string WavFilePath
         {
-            var buffer = File.ReadAllBytes(path);
+            get { return wavFilePath; }
+        }
+
+        public Resampler(string path)
+        {
+            wavFilePath = path;
+        }
+
+        public IWaveProvider Convert()
+        {
+            var buffer = File.ReadAllBytes(wavFilePath);
             using (Stream stream = new MemoryStream(buffer))
             {
                 using (var rawStream = new RawSourceWaveStream(stream, new WaveFormat(48000,16, 1)))
@@ -34,8 +45,6 @@ namespace MusHearingDetect.Models
                 }
             }
         }
-
-        public long WaveBufferSize { get { return waveBufferSize; } }
     }
 }
 

@@ -27,7 +27,7 @@ namespace MusHearingDetect.Models.VoiceRecognition
         public List<float> DetectFrequency(Resampler waveResampler)
         {
             List<float> detectedFrequencies = new List<float>();
-            var waveStream = waveResampler.Convert(@"C:\Users\agata\Downloads\recording.wav");
+            var waveStream = waveResampler.Convert();
 
             var pitch = new Pitch(waveStream);
             byte[] buffer = new byte[8192];

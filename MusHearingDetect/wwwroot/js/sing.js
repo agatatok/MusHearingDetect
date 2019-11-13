@@ -12,9 +12,11 @@ var audioContext //audio context to help us record
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
 
+
 //add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
+
 
 function startRecording() {
 	console.log("recordButton clicked");
@@ -34,7 +36,7 @@ function startRecording() {
 			sampleRate: 44100,
 			channelCount: 1
 		}
-    }).then(function (stream) {
+	}).then(function (stream) {
 
 
 		audioContext = new AudioContext();
@@ -44,7 +46,7 @@ function startRecording() {
 		rec = new Recorder(input, { numChannels: 1 })
 
 		//start the recording
-        rec.record();
+		rec.record();
 
 
 	}).catch(function (err) {
@@ -56,7 +58,7 @@ function startRecording() {
 
 
 function stopRecording() {
-	console.log("stopButton clicked");
+
 
 	//disable the stop button, enable the record too allow for new recordings
 	stopButton.disabled = true;
@@ -70,6 +72,9 @@ function stopRecording() {
 
 	//create the wav blob and pass it on to createDownloadLink
 	rec.exportWAV(createDownloadLink);
+
+
+	
 }
 
 function createDownloadLink(blob) {
@@ -77,19 +82,17 @@ function createDownloadLink(blob) {
 	var url = URL.createObjectURL(blob);
 	var li = document.createElement('p');
 	var link = document.createElement('a');
-	var filename = "recording";
+	var filename = "recording" + GetURLParameter();
 	
 
 	//save to disk link
 	link.href = url;
 	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-	link.innerHTML = "Akceptuj";
-	link.addEventListener("click", makevisible);
+    link.innerHTML = "Akceptuj";
 
 	document.getElementById("recsrc").value = link.download;
 
-	
-
+   
 	//add the save to disk link to li
 	li.appendChild(link);
 
@@ -97,7 +100,19 @@ function createDownloadLink(blob) {
 	recordinglst.appendChild(link);
 	
 }
-function makevisible() {
-	var nextbtn = document.getElementById('nextbtn');
-	nextbtn.style.visibility = "visible";
-} 
+
+function GetURLParameter() {
+	var sPageURL = window.location.href;
+	var indexOfLastSlash = sPageURL.lastIndexOf("/");
+
+	if (indexOfLastSlash > 0 && sPageURL.length - 1 != indexOfLastSlash)
+		return sPageURL.substring(indexOfLastSlash + 1);
+	else
+		return 0;
+}
+function EnableNextButton() {
+
+    var nextbtn = document.getElementById("nextbtn");
+    nextbtn.disabled = false;
+    
+}

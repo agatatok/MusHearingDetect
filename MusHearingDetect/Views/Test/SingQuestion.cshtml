@@ -13,77 +13,73 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" href="~/css/test.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
               integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext"
-              rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
 
     </environment>
 
 </head>
 <body>
     <div class="topnavbar">
-        <ul style="font-size: medium">
-            <li><a href="Index.cshtml" style="padding: 10px 30px;">SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+        <ul style="font-size: 12px; letter-spacing:3px">
+            <li id="title"><a href="Index"><i class="fas fa-assistive-listening-systems" style="margin-right:10px"></i>SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
         </ul>
 
     </div>
     <div class="container body-content">
         <div class="question">
+            <p id="number"> @ViewBag.Number</p>
             <p1>@Model.Question.Title</p1><br>
             <p2>@Model.Question.Description</p2>
         </div>
 
-        <audio id="audio" src="~/audio/@path"></audio>
 
-        <a onclick="playSound();">
-            <i class="fas fa-play fa-5x" style="margin: 0 auto; display:flex"></i>
-        </a>
+        <div class="play-audio">
+            <audio id="audio" src="~/audio/@path"></audio>
 
-        <script>
-            function playSound() {
-                var sound = document.getElementById("audio");
-                sound.play();
-            }
-        </script>
-
-        <div id="controls">
-            <button id="recordButton">Record</button>
-            <button id="stopButton" disabled>Stop</button>
+                <a onclick="playSound();" id="audio">
+                    <i class="fas fa-play fa-4x" style="margin-bottom:7%"></i>
+                </a>
         </div>
 
 
-        <ul id="recordingsList"></ul>
-        <div id="recordinglst">
+            <script>
+                function playSound() {
+                    var sound = document.getElementById("audio");
+                    sound.play();
+                }
+            </script>
 
+            <div class="answs">
+                <button id="recordButton" class="answbutton"><i class="fas fa-microphone"></i></button>
+                <button id="stopButton" disabled class="answbutton">Stop</button>
+            </div>
+
+
+            <ul id="recordingsList"></ul>
+            <div id="recordinglst">
+
+            </div>
+
+            <div class="answs" id="next">
+                @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
+                {
+                    <input type="hidden" name="Id" value="@ViewBag.Id" />
+                    <input type="hidden" name="Src" id="recsrc" />
+                    <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton" disabled/>
+                }
+
+            </div>
+
+            <footer>
+                <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+            </footer>
+
+            <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+            <script src="~/js/sing.js"></script>
         </div>
-
-
-
-
-
-
-
-
-        <div class="answs">
-            @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
-            {
-                <input type="hidden" name="Id" value="@ViewBag.Id" />
-                <input type="hidden" name="Src" id="recsrc" />
-                <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton"/>
-            }
-        
-        </div>
-
-
-
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
-        </footer>
-
-        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-        <script src="~/js/sing.js"></script>
-    </div>
 </body>
 </html>

@@ -11,6 +11,7 @@ using MusHearingDetect.Models;
 using System.IO;
 using MusHearingDetect.Models.SoundEvaluation;
 using NAudio.Wave;
+using MusHearingDetect.Models.VoiceRecognition;
 
 namespace MusHearingDetect.Controllers
 {
@@ -86,11 +87,11 @@ namespace MusHearingDetect.Controllers
         public IActionResult SingQuestion(int Id, string Src)
         {
 
-            
+        
             StreamWriter sw = new StreamWriter("log.txt");
 
-            var waveResampler = new Resampler();
-            Models.VoiceRecognition.Sound freqencyDetector = new Models.VoiceRecognition.Sound();
+            var waveResampler = new Resampler($@"C:\Users\agata\Downloads\recording{Id}.wav");
+            Sound freqencyDetector = new Sound();
             List<float> result = freqencyDetector.DetectFrequency(waveResampler);
 
             float mainFrequency = FrequencyFilter.CalculateMainFreq(result);

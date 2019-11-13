@@ -1,0 +1,41 @@
+﻿html {
+    height: 100%;
+}
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    color: #073B4C;
+    background-image: url(../images/background.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+#about {
+    font-size: large;
+    float: right;
+    font-weight:400;
+}
+
+.startbtn {
+    position: relative;
+    top: 150px;
+    text-align:center;
+   
+}
+#start {
+    color: #de8f92;
+    letter-spacing: 8px;
+    font-size: 40px;
+    font-weight: 500;
+}
+#start:hover {
+    color: #fffbb5;
+}
+
+
+a{
+    text-decoration:none;
+}

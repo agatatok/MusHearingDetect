@@ -4,21 +4,23 @@
 
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+    <title>Strona główna - System detekcji słuchu muzycznego u dzieci</title>
 
     <environment include="Development">
-        <link rel="stylesheet" href="~/css/site.css" />
-        <link href="https://fonts.googleapis.com/css?family=Comfortaa:300,400,500,600,700&display=swap&subset=latin-ext"
-              rel="stylesheet">
+        <link rel="stylesheet" href="~/css/index.css" />
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     </environment>
-   
+    
 </head>
 <body>
 
     <div class="topnavbar">
         <ul>
-            <li><a href="Index">SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
-            <li style="float:right"><a href="Home/About">O pracy</a></li>
+            <li id="title"><a href="Index"><i class="fas fa-assistive-listening-systems" style="margin-right:10px"></i>SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+            <li id="about"><a href="About">O pracy</a></li>
         </ul>
 
     </div>
@@ -26,6 +28,7 @@
 
     <div class="container body-content">
         @RenderBody()
+
         <footer>
             <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
         </footer>

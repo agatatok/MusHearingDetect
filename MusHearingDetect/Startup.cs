@@ -53,24 +53,27 @@ namespace MusHearingDetect
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
-            //app.UseStaticFiles(new StaticFileOptions
-            //{
-            //    FileProvider = new PhysicalFileProvider(
-            //Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "audio")),
-            //    RequestPath = "/Audio"
-            //});
-
-            //app.UseDirectoryBrowser(new DirectoryBrowserOptions
-            //{
-            //    FileProvider = new PhysicalFileProvider(
-            //        Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", "audio")),
-            //    RequestPath = "/Audio"
-            //});
-
+            
             app.UseCookiePolicy();
+            
+
 
             app.UseMvc(routes =>
             {
+
+                routes.MapRoute(
+                  "HomeAbout",
+                  "About",
+                  new { controller = "Home", action = "About" });
+
+                routes.MapRoute(
+                  "HomeIndex",
+                  "Index",
+                  new { controller = "Home", action = "Index" });
+
+               
+
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");

@@ -1,0 +1,190 @@
+﻿'dotnet.exe' (CoreCLR: DefaultDomain): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Private.CoreLib.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Users\agata\source\repos\MusHearingDetect\MusHearingDetect\bin\Debug\netcoreapp2.1\MusHearingDetect.dll'. Symbols loaded.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Hosting.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\netstandard.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Hosting.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.DependencyInjection.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Hosting.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.FileProviders.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Collections.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.EnvironmentVariables.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.Tasks.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.Extensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Linq.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Server.Kestrel.Core.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Server.Kestrel.Transport.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Server.Kestrel.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.IO.FileSystem.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Logging.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Server.IISIntegration.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.DependencyInjection.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.CommandLine.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.ComponentModel.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Logging.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Http.Features.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Diagnostics.DiagnosticSource.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Http.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Http.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.ObjectPool.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Core.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Razor.Runtime.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Resources.ResourceManager.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.FileProviders.Physical.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.IO.FileSystem.Watcher.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.ComponentModel.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Collections.Concurrent.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.FileSystemGlobbing.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.FileExtensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.Json.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.UserSecrets.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Diagnostics.Tracing.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.Overlapped.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Newtonsoft.Json.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Linq.Expressions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.ComponentModel.TypeConverter.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.ObjectModel.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Options.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Logging.Configuration.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Options.ConfigurationExtensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Logging.Console.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Logging.Debug.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.HostFiltering.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.HttpOverrides.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authentication.Core.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authentication.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Security.Claims.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Console.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.Thread.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Configuration.Binder.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.InteropServices.RuntimeInformation.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.CookiePolicy.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.DependencyModel.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Reflection.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.AppContext.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.IO.FileSystem.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.IO.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.Numerics.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Private.Uri.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Users\agata\source\repos\MusHearingDetect\MusHearingDetect\bin\Debug\netcoreapp2.1\MusHearingDetect.Views.dll'. Symbols loaded.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Razor.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Identity.UI.Views.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.RazorPages.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Identity.UI.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.SpaServices.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.SpaServices.Extensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Routing.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Buffers.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Routing.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.ApiExplorer.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authorization.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authorization.Policy.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.TagHelpers.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Razor.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.ViewFeatures.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.DataAnnotations.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Formatters.Json.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.DataProtection.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.DataProtection.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Cryptography.Internal.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Antiforgery.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.WebEncoders.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\System.Text.Encodings.Web.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.CodeAnalysis.Razor.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Razor.Language.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.CodeAnalysis.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Razor.Extensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Caching.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Caching.Memory.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Mvc.Cors.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Cors.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Connections.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Net.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Net.Http.Headers.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\System.IO.Pipelines.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\Microsoft.Win32.Registry.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Memory.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.InteropServices.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Xml.XDocument.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Private.Xml.Linq.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Private.Xml.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Diagnostics.Debug.dll'. Cannot find or open the PDB file.
+Microsoft.AspNetCore.DataProtection.KeyManagement.XmlKeyManager:Information: User profile is available. Using 'C:\Users\agata\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Security.Cryptography.Algorithms.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Text.Encoding.Extensions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Text.RegularExpressions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Reflection.Emit.ILGeneration.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Reflection.Emit.Lightweight.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Reflection.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Diagnostics.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.HttpsPolicy.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.StaticFiles.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.Extensions.Localization.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.JsonPatch.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Collections.Specialized.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Drawing.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Collections.Immutable.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Security.Cryptography.Primitives.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Security.Principal.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Runtime.Serialization.Formatters.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'Anonymously Hosted DynamicMethods Assembly'. 
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.Timer.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Net.Sockets.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Net.NameResolution.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.ThreadPool.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Numerics.Vectors.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\System.Runtime.CompilerServices.Unsafe.dll'. Cannot find or open the PDB file.
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 DEBUG http://localhost:58229/  0
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/  
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Security.Cryptography.X509Certificates.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.WebUtilities.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Http.Extensions.dll'. Cannot find or open the PDB file.
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 58.9791ms 200 
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authentication.Cookies.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Authentication.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Html.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.CodeAnalysis.CSharp.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.AspNetCore.App\2.1.13\Microsoft.AspNetCore.Diagnostics.Abstractions.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.ComponentModel.Annotations.dll'. Cannot find or open the PDB file.
+'dotnet.exe' (CoreCLR: clrhost): Loaded 'C:\Program Files\dotnet\shared\Microsoft.NETCore.App\2.1.13\System.Threading.Tasks.Extensions.dll'. Cannot find or open the PDB file.
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller MusHearingDetect.Controllers.HomeController (MusHearingDetect).
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executing action method MusHearingDetect.Controllers.HomeController.Index (MusHearingDetect) - Validation state: Valid
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed action method MusHearingDetect.Controllers.HomeController.Index (MusHearingDetect), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.3781ms.
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor:Information: Executing ViewResult, running view Index.
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor:Information: Executed ViewResult - view Index executed in 222.3342ms.
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed action MusHearingDetect.Controllers.HomeController.Index (MusHearingDetect) in 278.9209ms
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 731.514ms 200 text/html; charset=utf-8
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/css/site.css  
+Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware:Information: The file /css/site.css was not modified
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 26.728ms 304 text/css
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/About  
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Route matched with {action = "About", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult About() on controller MusHearingDetect.Controllers.HomeController (MusHearingDetect).
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executing action method MusHearingDetect.Controllers.HomeController.About (MusHearingDetect) - Validation state: Valid
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed action method MusHearingDetect.Controllers.HomeController.About (MusHearingDetect), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6262ms.
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor:Information: Executing ViewResult, running view About.
+Microsoft.AspNetCore.Mvc.ViewFeatures.ViewResultExecutor:Information: Executed ViewResult - view About executed in 61.9598ms.
+Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker:Information: Executed action MusHearingDetect.Controllers.HomeController.About (MusHearingDetect) in 100.6558ms
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 151.0299ms 200 text/html; charset=utf-8
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/css/style.css  
+Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware:Information: The file /css/style.css was not modified
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/css/about.css  
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 13.6558ms 304 text/css
+Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware:Information: Sending file. Request path: '/css/about.css'. Physical path: 'C:\Users\agata\source\repos\MusHearingDetect\MusHearingDetect\wwwroot\css\about.css'
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 133.2641ms 200 text/css
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request starting HTTP/1.1 GET http://localhost:44329/css/about.css  
+Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware:Information: The file /css/about.css was not modified
+Microsoft.AspNetCore.Hosting.Internal.WebHost:Information: Request finished in 68.8747ms 304 text/css
+The thread 0x3934 has exited with code 0 (0x0).
+The thread 0x4a50 has exited with code 0 (0x0).
+The thread 0x1338 has exited with code 0 (0x0).
+The thread 0x4d60 has exited with code 0 (0x0).
+The program '[18696] dotnet.exe' has exited with code -1 (0xffffffff).

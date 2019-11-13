@@ -1,13 +1,42 @@
-﻿
-@{
-    ViewBag.Title = "About";
-    Layout = "~/Views/Shared/_HomeLayout.cshtml";
-}
+﻿<!DOCTYPE html>
+<html>
+<head>
 
-<h2 style="margin: 5% 10%">O pracy</h2>
-<p style="margin: 5% 10%">
-    Aplikacja webowa "System detekcji słuchu muzycznego u dzieci" powstała jako praca inżynierska Agaty Tokarskiej
-    na Wydziale Inżynierii Biomedycznej Politechniki Śląskiej w Gliwicach na kierunku Inżynieria Biomedyczna - specjalność
-    "Informatyka i Aparatura Medyczna". Styczeń 2020.
-</p>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>O pracy - System detekcji słuchu muzycznego u dzieci</title>
 
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" href="~/css/about.css" />
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    </environment>
+
+</head>
+<body>
+
+
+    <div class="topnavbar">
+        <ul>
+            <li id="title"><a href="Index"><i class="fas fa-assistive-listening-systems" style="margin-right:10px"></i>SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+
+        </ul>
+
+    </div>
+
+    <div class="container body-content">
+        <div id="about-project"><p>O PRACY</p></div>
+        <p id="project-description">
+            Aplikacja webowa "System detekcji słuchu muzycznego u dzieci" powstała jako praca inżynierska Agaty Tokarskiej
+            na Wydziale Inżynierii Biomedycznej Politechniki Śląskiej w Gliwicach na kierunku Inżynieria Biomedyczna - specjalność
+            "Informatyka i Aparatura Medyczna". Styczeń 2020.
+        </p>
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+        </footer>
+    </div>
+</body>
+</html>
