@@ -41,7 +41,7 @@
             <audio id="audio" src="~/audio/@path"></audio>
 
                 <a onclick="playSound();" id="audio">
-                    <i class="fas fa-play fa-4x" style="margin-bottom:7%"></i>
+                    <i class="fas fa-play fa-4x" style="margin-bottom:4%"></i>
                 </a>
         </div>
 
@@ -53,23 +53,32 @@
                 }
             </script>
 
+            <p id="recording-description">Nagraj głos po przyciśnięciu mikrofonu, a następnie zatrzymaj nagranie przyciskiem stop.
+            Zaakceptuj nagranie i przejdź do kolejnego pytania.</p>
             <div class="answs">
                 <button id="recordButton" class="answbutton"><i class="fas fa-microphone"></i></button>
-                <button id="stopButton" disabled class="answbutton">Stop</button>
+                <button id="stopButton" disabled class="answbutton"><i class="fas fa-stop"></i></button>
             </div>
 
-
-            <ul id="recordingsList"></ul>
             <div id="recordinglst">
-
+                <a id="link" onclick="makeNextVisible();">Akceptuj</a>
             </div>
+        
+        
+            <script>
+                function makeNextVisible() {
+                    var next = document.getElementById("nextbtn");
+                    next.style.visibility = "visible";
+                    link.style.visibility = "hidden";
+                }
+            </script>
 
             <div class="answs" id="next">
                 @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
                 {
                     <input type="hidden" name="Id" value="@ViewBag.Id" />
                     <input type="hidden" name="Src" id="recsrc" />
-                    <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton" disabled/>
+                    <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton"/>
                 }
 
             </div>

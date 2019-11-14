@@ -93,6 +93,19 @@ body {
 .play-audio{
     text-align:center;
 }
-#recordbutton:active{
-    color:red;
+
+#recording-description {
+    font-size: 12px;
+    color: #de8f92;
+    text-align: center;
+}
+
+#recordinglst {
+    text-align:center;
+}
+
+#link {
+    font-size: large;
+    font-weight: 400;
+    color: #de8f92;
 }

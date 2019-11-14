@@ -11,22 +11,19 @@ var audioContext //audio context to help us record
 
 var recordButton = document.getElementById("recordButton");
 var stopButton = document.getElementById("stopButton");
+var next = document.getElementById("next");
+var link = document.getElementById("link");
+next.style.visibility = "hidden";
+link.style.visibility = "hidden";
 
-
-//add events to those 2 buttons
 recordButton.addEventListener("click", startRecording);
 stopButton.addEventListener("click", stopRecording);
 
 
 function startRecording() {
-	console.log("recordButton clicked");
-
-	/*
-		Simple constraints object, for more advanced audio features see
-		https://addpipe.com/blog/audio-constraints-getusermedia/
-	*/
-
-	recordButton.disabled = true;
+	
+    recordButton.disabled = true;
+    recordButton.style.color = "red";
 	stopButton.disabled = false
 
 
@@ -44,8 +41,7 @@ function startRecording() {
 		input = audioContext.createMediaStreamSource(stream);
 
 		rec = new Recorder(input, { numChannels: 1 })
-
-		//start the recording
+        
 		rec.record();
 
 
@@ -59,12 +55,10 @@ function startRecording() {
 
 function stopRecording() {
 
-
-	//disable the stop button, enable the record too allow for new recordings
+    recordButton.style.color = "#de8f92";
 	stopButton.disabled = true;
 	recordButton.disabled = true;
 	
-	//stop the recording
 	rec.stop();
 
 	//stop microphone access
@@ -72,32 +66,24 @@ function stopRecording() {
 
 	//create the wav blob and pass it on to createDownloadLink
 	rec.exportWAV(createDownloadLink);
-
-
-	
+    
 }
 
 function createDownloadLink(blob) {
 
 	var url = URL.createObjectURL(blob);
-	var li = document.createElement('p');
-	var link = document.createElement('a');
+	//var link = document.createElement('a');
 	var filename = "recording" + GetURLParameter();
 	
 
 	//save to disk link
 	link.href = url;
 	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-    link.innerHTML = "Akceptuj";
+    //link.innerHTML = "Akceptuj";
 
-	document.getElementById("recsrc").value = link.download;
-
-   
-	//add the save to disk link to li
-	li.appendChild(link);
-
-	
-	recordinglst.appendChild(link);
+    document.getElementById("recsrc").value = link.download;
+    link.style.visibility = "visible";
+	//recordinglst.appendChild(link);
 	
 }
 
@@ -109,10 +95,4 @@ function GetURLParameter() {
 		return sPageURL.substring(indexOfLastSlash + 1);
 	else
 		return 0;
-}
-function EnableNextButton() {
-
-    var nextbtn = document.getElementById("nextbtn");
-    nextbtn.disabled = false;
-    
 }

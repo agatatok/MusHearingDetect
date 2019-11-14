@@ -77,6 +77,7 @@ namespace MusHearingDetect.Controllers
             }
             else
             {
+                
                 return RedirectToAction("YourResult");
             }
 
@@ -132,7 +133,9 @@ namespace MusHearingDetect.Controllers
         
         public IActionResult YourResult()
         {
+
             ViewBag.Result = UserAnswers.CalculateResult();
+            var ans = UserAnswers.Answers;
             return View();
             
         }

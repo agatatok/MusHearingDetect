@@ -39,3 +39,8 @@ body {
 a{
     text-decoration:none;
 }
+
+#result{
+    margin:10%;
+    font-size:22px;
+}
