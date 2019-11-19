@@ -34,10 +34,10 @@ namespace MusHearingDetect.Models.VoiceRecognition
             float maxCorr = 0;
             int maxLag = 0;
 
-            // starting with low frequencies, working to higher
+
             for (int lag = maxOffset; lag >= minOffset; lag--)
             {
-                float corr = 0; // this is calculated as the sum of squares
+                float corr = 0; //calculated as the sum of squares
                 for (int i = 0; i < frames; i++)
                 {
                     int oldIndex = i - lag;
@@ -60,7 +60,6 @@ namespace MusHearingDetect.Models.VoiceRecognition
                 prevBuffer[n] = buffer[n];
             }
             float noiseThreshold = frames / 1000f;
-            //Debug.WriteLine(String.Format("Max Corr: {0} ({1}), Sec Corr: {2} ({3})", this.sampleRate / maxLag, maxCorr, this.sampleRate / secLag, secCor));
             if (maxCorr < noiseThreshold || maxLag == 0) return 0.0f;
             //return 44100.0f / secLag;   //--works better for singing
             return this.sampleRate / maxLag;

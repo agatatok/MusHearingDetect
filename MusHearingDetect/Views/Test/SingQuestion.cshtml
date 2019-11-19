@@ -66,6 +66,10 @@
         
         
             <script>
+                $("#recordButton").click(function () {
+                    $(this).find("i").toggleClass("fas fa-stop");
+                });
+                
                 function makeNextVisible() {
                     var next = document.getElementById("nextbtn");
                     next.style.visibility = "visible";

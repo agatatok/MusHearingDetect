@@ -8,17 +8,22 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
+using MusHearingDetect.DbContexts;
 
 namespace MusHearingDetect
 {
     public class Startup
     {
+
+        
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
+            
         }
 
         public IConfiguration Configuration { get; }
@@ -26,15 +31,28 @@ namespace MusHearingDetect
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            var connectionString = Configuration.GetConnectionString("MHDSysConnection");
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
-                options.CheckConsentNeeded = context => true;
+                options.CheckConsentNeeded = context => false;
                 options.MinimumSameSitePolicy = SameSiteMode.None;
             });
 
+            services.AddEntityFrameworkSqlServer()
+                .AddDbContext<UserContext>((serviceProvider, options) =>
+                options.UseSqlServer(connectionString)
+                .UseInternalServiceProvider(serviceProvider)
+                );
+            var dbContextOptionsbuilder = new DbContextOptionsBuilder<UserContext>()
+
+                .UseSqlServer(connectionString);
+            services.AddSingleton(dbContextOptionsbuilder.Options);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddDistributedMemoryCache(); 
+            services.AddSession();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -55,7 +73,7 @@ namespace MusHearingDetect
 
             
             app.UseCookiePolicy();
-            
+            app.UseSession();
 
 
             app.UseMvc(routes =>

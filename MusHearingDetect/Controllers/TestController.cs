@@ -10,8 +10,10 @@ using Microsoft.AspNetCore.Rewrite.Internal.PatternSegments;
 using MusHearingDetect.Models;
 using System.IO;
 using MusHearingDetect.Models.SoundEvaluation;
-using NAudio.Wave;
 using MusHearingDetect.Models.VoiceRecognition;
+using MusHearingDetect.Models.UserProfile;
+using System.Reflection;
+using MusHearingDetect.DbContexts;
 
 namespace MusHearingDetect.Controllers
 {
@@ -19,9 +21,12 @@ namespace MusHearingDetect.Controllers
     {
          
         private readonly IHostingEnvironment env;
-        public TestController(IHostingEnvironment env)
+        private UserContext _dbContext; 
+
+        public TestController(IHostingEnvironment env, UserContext userContext)
         {
             this.env = env;
+            _dbContext = userContext;
         }
 
         public IActionResult Index()
@@ -30,10 +35,29 @@ namespace MusHearingDetect.Controllers
         }
 
         [HttpGet]
+        public IActionResult UserQuestionnaire()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult UserQuestionnaire(User user)
+        {
+            _dbContext.Users.Add(user);
+            _dbContext.SaveChanges();
+            _dbContext.Entry(user).GetDatabaseValues();
+            int id =user.Id;
+            HttpContext.Session.SetInt32("UserId", id);
+            return RedirectToAction("BeginTest", new { Id = 1 });
+        }
+
+
+        [HttpGet]
         public IActionResult BeginTest(int? id)
         {
             if (id != null)
             {
+                
                 var audiofile = AudioRepo.Audiofiles[(int)id - 1];
                 ViewBag.Id = id;
                 ViewBag.AudioSrc = audiofile.Src;
@@ -57,18 +81,28 @@ namespace MusHearingDetect.Controllers
         [HttpPost]
         public IActionResult BeginTest(string firstbtn, string secondbtn)
         {
+            int? userId = HttpContext.Session.GetInt32("UserId");
             int id = int.Parse(this.RouteData.Values["id"].ToString());
             var audiofile = AudioRepo.Audiofiles[id - 1];
+
+            var user = _dbContext.Users.First(a => a.Id == userId);
+            PropertyInfo info = user.GetType().GetProperty($"Answer{id}");
+            
             if (firstbtn!=null)
             {
                 UserAnswers.AddAnswer(audiofile.Question.FirstAnswer.IsRight);
+                info.SetValue(user, audiofile.Question.FirstAnswer.IsRight);
+                _dbContext.SaveChanges();
+
             }
             if (secondbtn!=null)
             {
                 UserAnswers.AddAnswer(audiofile.Question.SecondAnswer.IsRight);
+                info.SetValue(user, audiofile.Question.SecondAnswer.IsRight);
+                _dbContext.SaveChanges();
             }
             
-            var answs = UserAnswers.Answers;
+            //var answs = UserAnswers.Answers;
             
             
             if (id < 21)
@@ -88,7 +122,11 @@ namespace MusHearingDetect.Controllers
         public IActionResult SingQuestion(int Id, string Src)
         {
 
-        
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            var user = _dbContext.Users.First(a => a.Id == userId);
+            PropertyInfo info = user.GetType().GetProperty($"Answer{Id}");
+
             StreamWriter sw = new StreamWriter("log.txt");
 
             var waveResampler = new Resampler($@"C:\Users\agata\Downloads\recording{Id}.wav");
@@ -97,7 +135,7 @@ namespace MusHearingDetect.Controllers
 
             float mainFrequency = FrequencyFilter.CalculateMainFreq(result);
             sw.WriteLine($"MEAN: {mainFrequency.ToString()}");
-            
+
 
 
 
@@ -105,7 +143,7 @@ namespace MusHearingDetect.Controllers
             {
                 sw.Write("Frequ " + result[i] + "\r\n");
             }
-                
+
 
             sw.Flush();
             sw.Close();
@@ -114,13 +152,17 @@ namespace MusHearingDetect.Controllers
             {
                 FrequencyClassificator FreqClass = new FrequencyClassificator(330);
                 UserAnswers.AddAnswer(FreqClass.Validate(mainFrequency));
-                var answs = UserAnswers.Answers;
+                var answs = Models.UserAnswers.Answers;
+                info.SetValue(user, FreqClass.Validate(mainFrequency));
+                _dbContext.SaveChanges();
                 return RedirectToAction("BeginTest", new { Id = Id + 1 });
             }
             else if (Id == 20)
             {
                 FrequencyClassificator FreqClass = new FrequencyClassificator(440);
                 UserAnswers.AddAnswer(FreqClass.Validate(mainFrequency));
+                info.SetValue(user, FreqClass.Validate(mainFrequency));
+                _dbContext.SaveChanges();
                 return RedirectToAction("YourResult");
             }
             else
@@ -135,7 +177,7 @@ namespace MusHearingDetect.Controllers
         {
 
             ViewBag.Result = UserAnswers.CalculateResult();
-            var ans = UserAnswers.Answers;
+            var ans = Models.UserAnswers.Answers;
             return View();
             
         }

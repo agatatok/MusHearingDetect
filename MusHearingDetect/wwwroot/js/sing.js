@@ -22,9 +22,10 @@ stopButton.addEventListener("click", stopRecording);
 
 function startRecording() {
 	
-    recordButton.disabled = true;
-    recordButton.style.color = "red";
-	stopButton.disabled = false
+    ////recordButton.disabled = true;
+    ////recordButton.style.color = "red";
+    stopButton.disabled = false;
+    //recordButton.classList.toggle("fas fa-stop");
 
 
 
@@ -62,10 +63,13 @@ function stopRecording() {
 	rec.stop();
 
 	//stop microphone access
-	gumStream.getAudioTracks()[0].stop();
+    gumStream.getAudioTracks()[0].stop();
+
+    console.log(gumStream.getAudioTracks()[0]);
 
 	//create the wav blob and pass it on to createDownloadLink
-	rec.exportWAV(createDownloadLink);
+    rec.exportWAV(createDownloadLink);
+    console.log(rec.exportWAV);
     
 }
 

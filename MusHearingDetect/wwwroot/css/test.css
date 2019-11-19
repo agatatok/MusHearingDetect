@@ -61,6 +61,7 @@ body {
     letter-spacing: 8px;
     border: none;
     outline:none;
+    cursor: pointer;
 }
 
     .answbutton:hover {
@@ -77,6 +78,7 @@ body {
 #audio {
     margin: 0 auto;
     color: #9bc8c3;
+    cursor:pointer;
 }
 
     #audio:hover {
