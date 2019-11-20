@@ -9,8 +9,8 @@ using MusHearingDetect.DbContexts;
 namespace MusHearingDetect.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20191119220346_initial")]
-    partial class initial
+    [Migration("20191120101519_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -71,7 +71,8 @@ namespace MusHearingDetect.Migrations
                     b.Property<int>("UserAge");
 
                     b.Property<string>("UserName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 

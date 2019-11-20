@@ -30,24 +30,29 @@ body {
     }
 
 .recordbutton {
-    margin: 0 auto;
-    height: 4em;
-    width: 10em;
+    margin: 0 30px;
+    height: auto;
+    width: auto;
     position: relative;
-    background-color: #073B4C;
-    font-size: 10px;
-    color: #ffd166;
+    background-color: transparent;
+    font-size: 40px;
+    font-weight: 500;
+    text-transform: uppercase;
+    color: #de8f92;
     text-decoration: none;
     font-family: 'Montserrat', sans-serif;
+    letter-spacing: 8px;
+    border: none;
+    outline: none;
+    cursor: pointer;
 }
 
     .recordbutton:hover {
-        background-color: #118AB2;
+        color: #fffbb5;
     }
 
-
 .answbutton {
-   margin: 0px 30px;
+   margin: 0 30px;
    height: auto;
     width: auto;
     position: relative;
@@ -110,4 +115,15 @@ body {
     font-size: large;
     font-weight: 400;
     color: #de8f92;
+}
+
+.text-danger
+{
+    font-size: small;
+    color:red;
+    margin-left:5%;
+}
+.questionnaire-form{
+    text-align:center;
+    margin-top:10%;
 }

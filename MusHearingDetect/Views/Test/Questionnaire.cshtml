@@ -1,0 +1,69 @@
+﻿@model MusHearingDetect.Models.UserProfile.User
+
+@{
+    Layout = null;
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" href="~/css/test.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+
+    </environment>
+</head>
+<body style="background: linear-gradient(0deg, #fdc2be 35%, #c6e5e0 35%)!important;">
+
+    <div class="topnavbar">
+        <ul>
+            <li id="title"><a href="Index"><i class="fas fa-assistive-listening-systems" style="margin-right:10px"></i>SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+
+        </ul>
+
+    </div>
+
+    <p style="margin-left: 10%; margin-top:5%">
+        Przed rozpoczęciem testu wypełnij poniższy formularz. Podłącz słuchawki i mikrofon dla lepszej jakości dźwięku.
+    </p>
+
+    <div class="container body-content">
+
+
+            <form asp-controller="Test" asp-action="Questionnaire" method="post" class="questionnaire-form">
+                <p>
+                    <label asp-for="UserName">Imię:</label>
+                    <input asp-for="UserName" />
+                    <br/>
+                    <span asp-validation-for="UserName" class="text-danger"></span>
+
+
+                </p>
+                <p>
+                    <label asp-for="UserAge">Wiek:</label>
+                    <input asp-for="UserAge" />
+                    <br/>
+                    <span asp-validation-for="UserAge" class="text-danger"></span>
+                </p>
+                <input type="submit" name="beginTest" value="Dalej" class="answbutton" style="margin-top:3%" />
+            </form>
+
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+        </footer>
+    </div>
+
+</body>
+</html>

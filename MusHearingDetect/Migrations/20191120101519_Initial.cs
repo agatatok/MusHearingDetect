@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace MusHearingDetect.Migrations
 {
-    public partial class initial : Migration
+    public partial class Initial : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -13,7 +13,7 @@ namespace MusHearingDetect.Migrations
                 {
                     Id = table.Column<int>(nullable: false)
                         .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    UserName = table.Column<string>(nullable: false),
+                    UserName = table.Column<string>(maxLength: 30, nullable: false),
                     UserAge = table.Column<int>(nullable: false),
                     Answer1 = table.Column<bool>(nullable: false),
                     Answer2 = table.Column<bool>(nullable: false),

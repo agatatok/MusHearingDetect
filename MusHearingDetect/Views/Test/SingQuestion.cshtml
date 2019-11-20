@@ -17,7 +17,8 @@
         <link rel="stylesheet" href="~/css/test.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
               integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet" />
+        <script src="~/lib/jquery/dist/jquery.js"></script>
 
     </environment>
 
@@ -36,7 +37,6 @@
             <p2>@Model.Question.Description</p2>
         </div>
 
-
         <div class="play-audio">
             <audio id="audio" src="~/audio/@path"></audio>
 
@@ -44,55 +44,49 @@
                     <i class="fas fa-play fa-4x" style="margin-bottom:4%"></i>
                 </a>
         </div>
+        <script>
+            function playSound() {
+                var sound = document.getElementById("audio");
+                sound.play();
+            }
+        </script>
 
 
-            <script>
-                function playSound() {
-                    var sound = document.getElementById("audio");
-                    sound.play();
-                }
-            </script>
-
-            <p id="recording-description">Nagraj głos po przyciśnięciu mikrofonu, a następnie zatrzymaj nagranie przyciskiem stop.
-            Zaakceptuj nagranie i przejdź do kolejnego pytania.</p>
-            <div class="answs">
-                <button id="recordButton" class="answbutton"><i class="fas fa-microphone"></i></button>
-                <button id="stopButton" disabled class="answbutton"><i class="fas fa-stop"></i></button>
-            </div>
-
-            <div id="recordinglst">
-                <a id="link" onclick="makeNextVisible();">Akceptuj</a>
-            </div>
-        
-        
-            <script>
-                $("#recordButton").click(function () {
-                    $(this).find("i").toggleClass("fas fa-stop");
-                });
-                
-                function makeNextVisible() {
-                    var next = document.getElementById("nextbtn");
-                    next.style.visibility = "visible";
-                    link.style.visibility = "hidden";
-                }
-            </script>
-
-            <div class="answs" id="next">
-                @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
-                {
-                    <input type="hidden" name="Id" value="@ViewBag.Id" />
-                    <input type="hidden" name="Src" id="recsrc" />
-                    <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton"/>
-                }
-
-            </div>
-
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
-            </footer>
-
-            <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
-            <script src="~/js/sing.js"></script>
+        <div class="answs">
+            <button id="recordButton" class="recordbutton"><i class="fas fa-microphone"></i></button>
+            <button id="reDoButton" class="answbutton" style="visibility:hidden;"><i class="fas fa-redo"></i></button>
         </div>
+
+        <div id="recordinglst">
+            <a id="link" onclick="makeNextVisible();">Akceptuj</a>
+        </div>
+        
+        
+        <script>
+            function makeNextVisible() {
+                reDoButton.style.visibility = "hidden";
+                var next = document.getElementById("nextbtn");
+                next.style.visibility = "visible";
+                link.style.visibility = "hidden";
+            }
+        </script>
+
+        <div class="answs" id="next">
+            @using (Html.BeginForm("SingQuestion", "Test", FormMethod.Post))
+            {
+                <input type="hidden" name="Id" value="@ViewBag.Id" />
+                <input type="hidden" name="Src" id="recsrc" />
+                <input type="submit" name="button" id="nextbtn" value="Dalej" class="answbutton"/>
+            }
+
+        </div>
+
+        <footer>
+            <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+        </footer>
+
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+        <script src="~/js/sing.js"></script>
+    </div>
 </body>
 </html>

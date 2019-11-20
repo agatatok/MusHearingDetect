@@ -69,7 +69,8 @@ namespace MusHearingDetect.Migrations
                     b.Property<int>("UserAge");
 
                     b.Property<string>("UserName")
-                        .IsRequired();
+                        .IsRequired()
+                        .HasMaxLength(30);
 
                     b.HasKey("Id");
 

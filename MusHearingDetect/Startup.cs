@@ -51,6 +51,12 @@ namespace MusHearingDetect
             services.AddSingleton(dbContextOptionsbuilder.Options);
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc(options =>
+            {
+                options.MaxModelValidationErrors = 50;
+                options.ModelBindingMessageProvider.SetValueMustNotBeNullAccessor(
+                    (_) => "To pole jest wymagane.");
+            });
             services.AddDistributedMemoryCache(); 
             services.AddSession();
         }
@@ -78,6 +84,15 @@ namespace MusHearingDetect
 
             app.UseMvc(routes =>
             {
+                routes.MapRoute(
+                  "Sing",
+                  "Sing",
+                  new { controller = "Test", action = "Sing" });
+
+                routes.MapRoute(
+                  "Questionnaire",
+                  "Questionnaire",
+                  new { controller = "Test", action = "Questionnaire" });
 
                 routes.MapRoute(
                   "HomeAbout",

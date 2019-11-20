@@ -1,12 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Hosting.Internal;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Rewrite.Internal.PatternSegments;
 using MusHearingDetect.Models;
 using System.IO;
 using MusHearingDetect.Models.SoundEvaluation;
@@ -35,20 +32,25 @@ namespace MusHearingDetect.Controllers
         }
 
         [HttpGet]
-        public IActionResult UserQuestionnaire()
+        public IActionResult Questionnaire()
         {
             return View();
         }
 
         [HttpPost]
-        public IActionResult UserQuestionnaire(User user)
+        public IActionResult Questionnaire(User user)
         {
-            _dbContext.Users.Add(user);
-            _dbContext.SaveChanges();
-            _dbContext.Entry(user).GetDatabaseValues();
-            int id =user.Id;
-            HttpContext.Session.SetInt32("UserId", id);
-            return RedirectToAction("BeginTest", new { Id = 1 });
+            if (ModelState.IsValid)
+            {
+                _dbContext.Users.Add(user);
+                _dbContext.SaveChanges();
+                _dbContext.Entry(user).GetDatabaseValues();
+                int id = user.Id;
+                HttpContext.Session.SetInt32("UserId", id);
+                return RedirectToAction("BeginTest", new { Id = 1 });
+
+            }
+            return View(user);
         }
 
 
@@ -57,7 +59,6 @@ namespace MusHearingDetect.Controllers
         {
             if (id != null)
             {
-                
                 var audiofile = AudioRepo.Audiofiles[(int)id - 1];
                 ViewBag.Id = id;
                 ViewBag.AudioSrc = audiofile.Src;
@@ -66,17 +67,13 @@ namespace MusHearingDetect.Controllers
                 {
                     return View("SingQuestion", audiofile);
                 }
-
                 return View(audiofile);
-                
-                
             }
             else
             {
                 return RedirectToAction("Index", "Home");
             }
         }
-
 
         [HttpPost]
         public IActionResult BeginTest(string firstbtn, string secondbtn)
@@ -101,49 +98,36 @@ namespace MusHearingDetect.Controllers
                 info.SetValue(user, audiofile.Question.SecondAnswer.IsRight);
                 _dbContext.SaveChanges();
             }
-            
             //var answs = UserAnswers.Answers;
-            
             
             if (id < 21)
             {
                 return RedirectToAction("BeginTest", new { Id = id + 1 });
             }
             else
-            {
-                
+            { 
                 return RedirectToAction("YourResult");
             }
 
         }
-
-
+        
         [HttpPost]
         public IActionResult SingQuestion(int Id, string Src)
         {
-
             int? userId = HttpContext.Session.GetInt32("UserId");
-
             var user = _dbContext.Users.First(a => a.Id == userId);
             PropertyInfo info = user.GetType().GetProperty($"Answer{Id}");
-
             StreamWriter sw = new StreamWriter("log.txt");
-
             var waveResampler = new Resampler($@"C:\Users\agata\Downloads\recording{Id}.wav");
             Sound freqencyDetector = new Sound();
             List<float> result = freqencyDetector.DetectFrequency(waveResampler);
-
             float mainFrequency = FrequencyFilter.CalculateMainFreq(result);
             sw.WriteLine($"MEAN: {mainFrequency.ToString()}");
-
-
-
-
+            
             for (int i = 0; i < result.Count; i++)
             {
                 sw.Write("Frequ " + result[i] + "\r\n");
             }
-
 
             sw.Flush();
             sw.Close();
@@ -172,18 +156,25 @@ namespace MusHearingDetect.Controllers
         }
 
 
-        
         public IActionResult YourResult()
         {
 
             ViewBag.Result = UserAnswers.CalculateResult();
+            int? userId = HttpContext.Session.GetInt32("UserId");
+
+            var user = _dbContext.Users.First(a => a.Id == userId);
+            user.Result = (int)UserAnswers.CalculateResult();
+            _dbContext.SaveChanges();
+            
             var ans = Models.UserAnswers.Answers;
             return View();
             
         }
 
-        public IActionResult Sing()
+        [HttpPost]
+        public IActionResult Sing(FormCollection fc)
         {
+            Console.WriteLine(" ");
             return View();
         }
 
