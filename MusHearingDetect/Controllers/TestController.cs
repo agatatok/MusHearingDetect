@@ -47,6 +47,7 @@ namespace MusHearingDetect.Controllers
                 _dbContext.Entry(user).GetDatabaseValues();
                 int id = user.Id;
                 HttpContext.Session.SetInt32("UserId", id);
+                HttpContext.Session.SetInt32("questionId", 1);
                 return RedirectToAction("BeginTest", new { Id = 1 });
 
             }
@@ -57,17 +58,25 @@ namespace MusHearingDetect.Controllers
         [HttpGet]
         public IActionResult BeginTest(int? id)
         {
+            //int? questionId = HttpContext.Session.GetInt32("questionId");
             if (id != null)
             {
+                //if (id!=questionId)
+                //{
+                //    return RedirectToAction("BeginTest", new { Id= questionId });
+                //}
+
                 var audiofile = AudioRepo.Audiofiles[(int)id - 1];
                 ViewBag.Id = id;
                 ViewBag.AudioSrc = audiofile.Src;
                 ViewBag.Number = $"{id}/{AudioRepo.Audiofiles.Count}";
-                if(id==19 || id==20)
+                //HttpContext.Session.SetInt32("questionId", (int)++questionId);
+                if (id==19 || id==20)
                 {
                     return View("SingQuestion", audiofile);
                 }
                 return View(audiofile);
+
             }
             else
             {
@@ -172,9 +181,17 @@ namespace MusHearingDetect.Controllers
         }
 
         [HttpPost]
-        public IActionResult Sing(FormCollection fc)
+        public IActionResult Sing()
         {
-            Console.WriteLine(" ");
+            var file = Request.Form.Files[0];
+            byte[] filedata = null;
+            using (var target = new MemoryStream())
+            {
+                file.CopyTo(target);
+                filedata = target.ToArray();
+              
+            }
+
             return View();
         }
 

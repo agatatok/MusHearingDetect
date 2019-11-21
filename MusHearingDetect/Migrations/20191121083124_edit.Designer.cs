@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using MusHearingDetect.DbContexts;
 
 namespace MusHearingDetect.Migrations
 {
     [DbContext(typeof(UserContext))]
-    partial class UserContextModelSnapshot : ModelSnapshot
+    [Migration("20191121083124_edit")]
+    partial class edit
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -27,29 +29,29 @@ namespace MusHearingDetect.Migrations
 
                     b.Property<bool?>("Answer1");
 
-                    b.Property<bool?>("Answer10");
+                    b.Property<bool>("Answer10");
 
-                    b.Property<bool?>("Answer11");
+                    b.Property<bool>("Answer11");
 
-                    b.Property<bool?>("Answer12");
+                    b.Property<bool>("Answer12");
 
-                    b.Property<bool?>("Answer13");
+                    b.Property<bool>("Answer13");
 
-                    b.Property<bool?>("Answer14");
+                    b.Property<bool>("Answer14");
 
-                    b.Property<bool?>("Answer15");
+                    b.Property<bool>("Answer15");
 
-                    b.Property<bool?>("Answer16");
+                    b.Property<bool>("Answer16");
 
-                    b.Property<bool?>("Answer17");
+                    b.Property<bool>("Answer17");
 
-                    b.Property<bool?>("Answer18");
+                    b.Property<bool>("Answer18");
 
-                    b.Property<bool?>("Answer19");
+                    b.Property<bool>("Answer19");
 
                     b.Property<bool?>("Answer2");
 
-                    b.Property<bool?>("Answer20");
+                    b.Property<bool>("Answer20");
 
                     b.Property<bool?>("Answer3");
 
@@ -57,13 +59,13 @@ namespace MusHearingDetect.Migrations
 
                     b.Property<bool?>("Answer5");
 
-                    b.Property<bool?>("Answer6");
+                    b.Property<bool>("Answer6");
 
-                    b.Property<bool?>("Answer7");
+                    b.Property<bool>("Answer7");
 
-                    b.Property<bool?>("Answer8");
+                    b.Property<bool>("Answer8");
 
-                    b.Property<bool?>("Answer9");
+                    b.Property<bool>("Answer9");
 
                     b.Property<int>("Result");
 

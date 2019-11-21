@@ -66,32 +66,33 @@ function stopRecording() {
 	rec.exportWAV(createDownloadLink);
 
  //   console.log("rec");
- //   console.log(rec);
- //   console.log("exportWav")
-	//console.log(rec.exportWAV(createDownloadLink));
+    //console.log(rec);
+	console.log(rec.exportWAV(createDownloadLink));
 
 	
-  
+ //   rec.getBuffer(function (audioarray) {
 
-	//rec.getBuffer(function (audioarray) {
-	//    var fd = new FormData();
+ //       console.log(audioarray)
+ //   //});
+	////    var fd = new FormData();
 		
 
-	//    var audioString = JSON.stringify(audioarray);
+ //       var audioString = JSON.stringify(audioarray);
+ //       console.log(audioString);
 	//    fd.append("audio_data", audioString);
 	//    var xhr = new XMLHttpRequest();
-	//    xhr.open("POST", "/Test/Sing", true);
+	//    xhr.open("POST", "/test/Sing", true);
 	//    xhr.send(fd);
 	//});
-	//    $.ajax({
-	//        type: "POST",
-	//        url: '/Test/Sing',
-	//        data: JSON.stringify(audioarray),
-	//        dataType: "json",
-	//        contentType: "application/json; charset=utf-8",
-	//        success: function () { alert("Mapping Successful") },
-	//        failure: function () { alert("not working..."); }
-	//    });
+	    //$.ajax({
+	    //    type: "POST",
+	    //    url: '/Test/Sing',
+	    //    data: JSON.stringify(audioarray),
+	    //    dataType: "json",
+	    //    contentType: "application/json; charset=utf-8",
+	    //    success: function () { alert("Mapping Successful") },
+	    //    failure: function () { alert("not working..."); }
+	    //});
 
 	//});
 
@@ -120,13 +121,14 @@ function createDownloadLink(blob) {
 	//		console.log("Server returned: ", e.target.responseText);
 	//	}
 	//};
-	//var fd = new FormData();
-	//fd.append("audio_data", blob, "recording");
-	//var xhr = new XMLHttpRequest();
-	//xhr.open("POST", "/Test/Sing", true);
-	//var fileContent = window.btoa(blob);
+    var fd = new FormData();
+   // var fileContent = window.btoa(blob);
+	fd.append("audio_data", blob);
+	var xhr = new XMLHttpRequest();
+	xhr.open("POST", "/Test/Sing", true);
+	
 	//console.log(fileContent);
-	//xhr.send(JSON.stringify({ data: fileContent }));
+	xhr.send(fd);
 
  
    
