@@ -9,13 +9,14 @@ namespace MusHearingDetect.Models.UserProfile
 {
     public class User
     {
+        
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
         [Required (ErrorMessage ="Pole nie może być puste.")]
         [StringLength(30, ErrorMessage = "Imię nie może być dłuższe niż 30 znaków.")]
-        [RegularExpression(@"^[a-zA-ZżźćńółęąśŻŹĆĄŚĘŁÓŃ]+$", ErrorMessage = "Imię może zawierać jedynie litery.")]
+        [RegularExpression(@"^[a-zA-ZąćęłńóśźżĄĘŁŃÓŚŹŻ]+$", ErrorMessage = "Imię może zawierać jedynie litery.")]
         public string UserName { get; set; }
 
         [Required (ErrorMessage = "Pole nie może być puste.")]

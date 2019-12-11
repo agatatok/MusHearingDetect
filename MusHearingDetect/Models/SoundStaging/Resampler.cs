@@ -13,20 +13,16 @@ namespace MusHearingDetect.Models
     {
         private long waveBufferSize;
         public long WaveBufferSize { get { return waveBufferSize; } }
-        private string wavFilePath;
-        public string WavFilePath
-        {
-            get { return wavFilePath; }
-        }
+        private byte[] buffer;
+        public byte[] Buffer { get { return buffer; } set { buffer = value; } }
 
-        public Resampler(string path)
+        public Resampler(byte[] buffer)
         {
-            wavFilePath = path;
+            this.buffer = buffer;
         }
 
         public IWaveProvider Convert()
         {
-            var buffer = File.ReadAllBytes(wavFilePath);
             using (Stream stream = new MemoryStream(buffer))
             {
                 using (var rawStream = new RawSourceWaveStream(stream, new WaveFormat(48000,16, 1)))

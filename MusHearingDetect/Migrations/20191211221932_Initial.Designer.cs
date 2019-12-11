@@ -10,8 +10,8 @@ using MusHearingDetect.DbContexts;
 namespace MusHearingDetect.Migrations
 {
     [DbContext(typeof(UserContext))]
-    [Migration("20191121091404_nullableBool")]
-    partial class nullableBool
+    [Migration("20191211221932_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

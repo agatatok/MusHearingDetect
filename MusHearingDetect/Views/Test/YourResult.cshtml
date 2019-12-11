@@ -3,19 +3,8 @@
     Layout = "~/Views/Shared/_HomeLayout.cshtml";
 
 }
-@{ 
-    string text = "";
-    if (ViewBag.Result > 60)
-    {
-        text = "No no, nieźle.";
-    }
-    else
-    {
-        text = "Słabiutko.";
-    }
 
-
-}
 <div id="result">
- @text <br />
-    Twój wynik to: @ViewBag.Result%</div>
+    Liczba poprawnych odpowiedzi: @ViewBag.Count/20. <br/>
+    Twój wynik to: @ViewBag.Result%
+</div>

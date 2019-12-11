@@ -16,14 +16,5 @@ namespace MusHearingDetect.Models
         {
 
         }
-
-        public Question(Question question)
-        {
-            this.Title = question.Title;
-            this.Description = question.Description;
-            this.FirstAnswer = question.FirstAnswer;
-            this.SecondAnswer = question.SecondAnswer;
-
-        }
     }
 }

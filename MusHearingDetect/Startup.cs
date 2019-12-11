@@ -13,6 +13,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.FileProviders;
 using MusHearingDetect.DbContexts;
+using MusHearingDetect.Services;
 
 namespace MusHearingDetect
 {
@@ -46,7 +47,6 @@ namespace MusHearingDetect
                 .UseInternalServiceProvider(serviceProvider)
                 );
             var dbContextOptionsbuilder = new DbContextOptionsBuilder<UserContext>()
-
                 .UseSqlServer(connectionString);
             services.AddSingleton(dbContextOptionsbuilder.Options);
 
@@ -59,6 +59,8 @@ namespace MusHearingDetect
             });
             services.AddDistributedMemoryCache(); 
             services.AddSession();
+            services.AddHttpContextAccessor();
+            services.AddTransient<ITestService, TestService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

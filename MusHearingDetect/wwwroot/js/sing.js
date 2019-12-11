@@ -2,21 +2,20 @@
 var gumStream; 						//stream from getUserMedia()
 var rec; 							//Recorder.js object
 var input; 							//MediaStreamAudioSourceNode we'll be recording
-
 var AudioContext = window.AudioContext || window.webkitAudioContext;
-var audioContext //audio context to help us record
+var audioContext;
+
 
 var reDoButton = document.getElementById("reDoButton");
 var recordButton = document.getElementById("recordButton");
-var recordIcon = document.querySelector(".recordbutton i");
-recordIcon.addEventListener("click", toggleIcon);
-reDoButton.addEventListener("click", tryAgain);
+var recordIcon = document.getElementById("microphoneIcon");
+var next = document.getElementById("nextbtn");
 
-var next = document.getElementById("next");
-var link = document.getElementById("link");
+recordIcon.addEventListener('click', toggleIcon);
+reDoButton.addEventListener("click", tryAgain);
+next.addEventListener("click", goToNextQuest);
 
 next.style.visibility = "hidden";
-link.style.visibility = "hidden";
 
 recordButton.addEventListener("click", checkClass);
 
@@ -27,6 +26,7 @@ function toggleIcon() {
 
 function checkClass() {
 	if (recordIcon.classList.contains("fa-stop")) {
+
 		console.log("start");
 		startRecording();
 	}
@@ -34,6 +34,9 @@ function checkClass() {
 		console.log("stop");
 		stopRecording();
 		reDoButton.style.visibility = "visible";
+		next.style.visibility = "visible";
+		
+		
 	}
 }
 
@@ -49,101 +52,54 @@ function startRecording() {
 		gumStream = stream;
 		input = audioContext.createMediaStreamSource(stream);
 		rec = new Recorder(input, { numChannels: 1 });
-		rec.record();
+		rec && rec.record();
 
 	}).catch(function (err) {
-		recordButton.disabled = false;      //enable the record button if getUserMedia() fails
+		recordButton.disabled = false;   
 	});
 }
 
 
 function stopRecording() {
 		
-	rec.stop();
-	gumStream.getAudioTracks()[0].stop();       //stop microphone access
-	recordButton.style.visibility = "hidden";
-	//create the wav blob and pass it on to createDownloadLink
-	rec.exportWAV(createDownloadLink);
-
- //   console.log("rec");
-    //console.log(rec);
-	console.log(rec.exportWAV(createDownloadLink));
-
-	
- //   rec.getBuffer(function (audioarray) {
-
- //       console.log(audioarray)
- //   //});
-	////    var fd = new FormData();
-		
-
- //       var audioString = JSON.stringify(audioarray);
- //       console.log(audioString);
-	//    fd.append("audio_data", audioString);
-	//    var xhr = new XMLHttpRequest();
-	//    xhr.open("POST", "/test/Sing", true);
-	//    xhr.send(fd);
-	//});
-	    //$.ajax({
-	    //    type: "POST",
-	    //    url: '/Test/Sing',
-	    //    data: JSON.stringify(audioarray),
-	    //    dataType: "json",
-	    //    contentType: "application/json; charset=utf-8",
-	    //    success: function () { alert("Mapping Successful") },
-	    //    failure: function () { alert("not working..."); }
-	    //});
-
-	//});
-
-
-
-
+	rec && rec.stop();
+	gumStream.getAudioTracks()[0].stop();
+	recordButton.style.visibility = "hidden";	
 }
 
-function createDownloadLink(blob) {
-
-	
-
-	var url = URL.createObjectURL(blob);
-	var filename = "recording" + GetURLParameter();
-	
-	//save to disk link
-	link.href = url;
-	link.download = filename + ".wav"; //download forces the browser to donwload the file using the  filename
-
-	document.getElementById("recsrc").value = link.download;
-	link.style.visibility = "visible";
-
-	
-	//xhr.onload = function (e) {
-	//	if (this.readyState === 4) {
-	//		console.log("Server returned: ", e.target.responseText);
-	//	}
-	//};
-    var fd = new FormData();
-   // var fileContent = window.btoa(blob);
-	fd.append("audio_data", blob);
-	var xhr = new XMLHttpRequest();
-	xhr.open("POST", "/Test/Sing", true);
-	
-	//console.log(fileContent);
-	xhr.send(fd);
-
+function goToNextQuest() {
+	upload();
  
-   
-
-	
-	
-
 }
+
+function reqListener(e) {
+    if (GetURLParameter() == 19) {
+        window.location.href = "/Test/Question/20";
+    }
+    else {
+        window.location.href = "/Test/YourResult";
+    }
+}
+
+function upload() {
+    rec && rec.exportWAV(function (blob) {
+        var fd = new FormData();
+        var UrlParameter = GetURLParameter();
+        fd.append("audio_data", blob);
+        fd.append("param", UrlParameter);
+        var xhr = new XMLHttpRequest();
+        xhr.addEventListener("load", reqListener);
+        xhr.open("POST", "/Test/Sing", true);
+        xhr.send(fd);
+	});
+}
+
+
 function tryAgain() {
 	rec.clear;
-	recordButton.style.visibility = "visible";
-	//recordIcon.classList.toggle("fa-microphone");
-
-	link.style.visibility = "hidden";
+	recordButton.style.visibility = "visible";  
 	reDoButton.style.visibility = "hidden";
+	next.style.visibility = "hidden";
 }
 
 function GetURLParameter() {

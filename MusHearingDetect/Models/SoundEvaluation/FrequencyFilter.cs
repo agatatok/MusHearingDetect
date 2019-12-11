@@ -9,9 +9,20 @@ namespace MusHearingDetect.Models.SoundEvaluation
     {
         public static float CalculateMainFreq(List<float> frequencies)
         {
-            int invalidSamples = (int)Math.Ceiling(0.05 * (double)frequencies.Count);
-            List<float> sublist = frequencies.GetRange(invalidSamples, frequencies.Count - invalidSamples-1);
-            return sublist.Average();  
+
+            if (frequencies.Count > 1)
+            {
+                int invalidSamples = (int)Math.Ceiling(0.05 * (double)frequencies.Count);
+
+                List<float> sublist = frequencies.GetRange(invalidSamples, frequencies.Count - invalidSamples - 1);
+
+                return sublist.Average();
+            }
+            if(frequencies.Count == 0)
+            {
+                return 0;
+            }
+            return frequencies.Average();
         }
     }
 }

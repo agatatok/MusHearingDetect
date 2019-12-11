@@ -12,7 +12,7 @@
 
 @section Answers{
 <div class="answs">
-    @using (Html.BeginForm("BeginTest", "Test", FormMethod.Post))
+    @using (Html.BeginForm("Question", "Test", FormMethod.Post))
     {
         <input type="submit" name ="firstbtn" value="@Model.Question.FirstAnswer.AnswerTxt" class="answbutton" />
         <input type="submit" name ="secondbtn" value="@Model.Question.SecondAnswer.AnswerTxt" class="answbutton" />

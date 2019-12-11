@@ -6,7 +6,7 @@ using Microsoft.CodeAnalysis.CSharp.Syntax;
 
 namespace MusHearingDetect.Models
 {
-    public static class AudioRepo
+    public static class AudioRepository
     {
 
         public static IList<Audiofile> Audiofiles = new List<Audiofile>()
@@ -15,7 +15,7 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
                     FirstAnswer = new Answer("Wesoły", true),
                     SecondAnswer = new Answer("Smutny", false)
@@ -25,7 +25,7 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
                     FirstAnswer = new Answer("Wesoły", true),
                     SecondAnswer = new Answer("Smutny", false)
@@ -35,7 +35,7 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
                     FirstAnswer = new Answer("Wesoły", false),
                     SecondAnswer = new Answer("Smutny", true)
@@ -45,7 +45,7 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
                     FirstAnswer = new Answer("Wesoły", false),
                     SecondAnswer = new Answer("Smutny", true)
@@ -55,7 +55,7 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło, czy smutno.",
+                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
                     FirstAnswer = new Answer("Wesoły", true),
                     SecondAnswer = new Answer("Smutny", false)
@@ -208,11 +208,6 @@ namespace MusHearingDetect.Models
                 }
             },
         };
-
-        //public static IEnumerable<Audiofile> Audiofiles
-        //{
-        //    get { return audiofiles; }
-        //}
-
+        
     }
 }
