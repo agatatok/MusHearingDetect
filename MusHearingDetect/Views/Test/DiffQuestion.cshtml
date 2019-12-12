@@ -1,0 +1,22 @@
+﻿@model MusHearingDetect.Models.Audiofile
+@{
+    Layout = "~/Views/Shared/_DiffLayout.cshtml";
+}
+
+@section questname {
+    @Model.Question.Title 
+}
+@section questdescription {
+    @Model.Question.Description
+}
+
+@section Answers{
+<div class="answs">
+    @using (Html.BeginForm("Question", "Test", FormMethod.Post))
+    {
+        <input type="submit" name ="firstbtn" value="@Model.Question.FirstAnswer.AnswerTxt" class="answbutton" />
+        <input type="submit" name ="secondbtn" value="@Model.Question.SecondAnswer.AnswerTxt" class="answbutton" />
+    }
+</div>
+}
+

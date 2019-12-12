@@ -24,7 +24,7 @@ namespace MusHearingDetect.Models
         private static string GetSrc(int Id)
         {
             char pad = '0';
-            return String.Concat("~/audio/Audio", Id.ToString().PadLeft(3, pad), ".wav");
+            return String.Concat("~/audio/Audio", Id.ToString().PadLeft(2, pad), ".wav");
         }
     }
 }

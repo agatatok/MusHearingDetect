@@ -27,8 +27,8 @@ namespace MusHearingDetect.Models
                 {
                     Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
-                    FirstAnswer = new Answer("Wesoły", true),
-                    SecondAnswer = new Answer("Smutny", false)
+                    FirstAnswer = new Answer("Wesoły", false),
+                    SecondAnswer = new Answer("Smutny", true)
                 }
             },
             new Audiofile(3)
@@ -47,18 +47,18 @@ namespace MusHearingDetect.Models
                 {
                     Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
                     Title = "Wesoły czy smutny?",
-                    FirstAnswer = new Answer("Wesoły", false),
-                    SecondAnswer = new Answer("Smutny", true)
+                    FirstAnswer = new Answer("Wesoły", true),
+                    SecondAnswer = new Answer("Smutny", false)
                 }
             },
             new Audiofile(5)
             {
                 Question = new Question()
                 {
-                    Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany trójdźwięk brzmi wesoło czy smutno.",
-                    Title = "Wesoły czy smutny?",
-                    FirstAnswer = new Answer("Wesoły", true),
-                    SecondAnswer = new Answer("Smutny", false)
+                     Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
+                    Title = "W górę czy w dół?",
+                    FirstAnswer = new Answer("W górę", false),
+                    SecondAnswer = new Answer("W dół", true)
                 }
             },
             new Audiofile(6)
@@ -85,20 +85,20 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                Title = "W górę czy w dół?",
-                FirstAnswer = new Answer("W górę", true),
-                SecondAnswer = new Answer("W dół", false)
+                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
+                Title = "Niski czy wysoki?",
+                FirstAnswer = new Answer("Niski", true),
+                SecondAnswer = new Answer("Wysoki", false)
                 }
             },
             new Audiofile(9)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszana melodia prowadzi w górę czy w dół.",
-                Title = "W górę czy w dół?",
-                FirstAnswer = new Answer("W górę", false),
-                SecondAnswer = new Answer("W dół", true)
+                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
+                Title = "Niski czy wysoki?",
+                FirstAnswer = new Answer("Niski", false),
+                SecondAnswer = new Answer("Wysoki", true)
                 }
             },
             new Audiofile(10)
@@ -115,80 +115,80 @@ namespace MusHearingDetect.Models
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
-                Title = "Niski czy wysoki?",
-                FirstAnswer = new Answer("Niski", false),
-                SecondAnswer = new Answer("Wysoki", true)
+                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
+                Title = "Ile słyszysz dźwięków?",
+                FirstAnswer = new Answer("Dwa", true),
+                SecondAnswer = new Answer("Więcej niż dwa" ,false)
                 }
             },
             new Audiofile(12)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
-                Title = "Niski czy wysoki?",
-                FirstAnswer = new Answer("Niski", true),
-                SecondAnswer = new Answer("Wysoki", false)
+                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
+                Title = "Ile słyszysz dźwięków?",
+                FirstAnswer = new Answer("Dwa", false),
+                SecondAnswer = new Answer("Więcej niż dwa" ,true)
                 }
             },
             new Audiofile(13)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ, czy usłyszany dźwięk jest niski (gruby) czy wysoki (cienki).",
-                Title = "Niski czy wysoki?",
-                FirstAnswer = new Answer("Niski", false),
-                SecondAnswer = new Answer("Wysoki", true)
+                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
+                Title = "Ile słyszysz dźwięków?",
+                FirstAnswer = new Answer("Dwa", true),
+                SecondAnswer = new Answer("Więcej niż dwa" ,false)
                 }
             },
             new Audiofile(14)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa", true),
-                SecondAnswer = new Answer("Więcej niż dwa" ,false)
+                Description = "Posłuchaj dwóch nagrań, a następnie określ czy usłyszane melodie są jednakowe czy różne.",
+                Title = "Melodie jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe", false),
+                SecondAnswer = new Answer("Różne" ,true)
                 }
             },
             new Audiofile(15)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa", false),
-                SecondAnswer = new Answer("Więcej niż dwa" ,true)
+                Description = "Posłuchaj dwóch nagrań, a następnie określ czy usłyszane melodie są jednakowe czy różne.",
+                Title = "Melodie jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe", true),
+                SecondAnswer = new Answer("Różne" ,false)
                 }
             },
             new Audiofile(16)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa", false),
-                SecondAnswer = new Answer("Więcej niż dwa" ,true)
+                Description = "Posłuchaj dwóch nagrań, a następnie określ czy usłyszane rytmy są jednakowe czy różne.",
+                Title = "Rytmy jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe", true),
+                SecondAnswer = new Answer("Różne" ,false)
                 }
             },
             new Audiofile(17)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa", true),
-                SecondAnswer = new Answer("Więcej niż dwa" ,false)
+                Description = "Posłuchaj dwóch nagrań, a następnie określ czy usłyszane rytmy są jednakowe czy różne.",
+                Title = "Rytmy jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe", true),
+                SecondAnswer = new Answer("Różne" ,false)
                 }
             },
             new Audiofile(18)
             {
                 Question = new Question()
                 {
-                Description = "Posłuchaj nagrania, a następnie określ ile dźwięków na raz usłyszałeś.",
-                Title = "Ile słyszysz dźwięków?",
-                FirstAnswer = new Answer("Dwa", true),
-                SecondAnswer = new Answer("Więcej niż dwa" ,false)
+                Description = "Posłuchaj dwóch nagrań, a następnie określ czy usłyszane rytmy są jednakowe czy różne.",
+                Title = "Rytmy jednakowe czy różne?",
+                FirstAnswer = new Answer("Jednakowe", false),
+                SecondAnswer = new Answer("Różne" ,true)
                 }
             },
             new Audiofile(19)

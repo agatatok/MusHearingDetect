@@ -1,0 +1,82 @@
+﻿@using Microsoft.AspNetCore.Http.Extensions
+@inject Microsoft.AspNetCore.Hosting.IHostingEnvironment env
+@{
+    ViewData["Title"] = "Test";
+    string temppath = env.WebRootFileProvider.GetFileInfo(ViewBag.AudioSrc)?.Name.ToString();
+    string path1 = temppath.Substring(0, 7)+"a.wav";
+    string path2 = temppath.Substring(0, 7) + "b.wav";
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - System detekcji słuchu muzycznego u dzieci</title>
+
+    <environment include="Development">
+        <link rel="stylesheet" href="~/css/style.css" />
+        <link rel="stylesheet" href="~/css/test.css" />
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+              integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500&display=swap&subset=latin-ext" rel="stylesheet">
+
+    </environment>
+
+</head>
+<body>
+<div class="topnavbar">
+    <ul style="font-size: 12px; letter-spacing:3px">
+        <li id="title"><a href="Index"><i class="fas fa-assistive-listening-systems" style="margin-right:10px"></i>SYSTEM DETEKCJI SŁUCHU MUZYCZNEGO</a></li>
+    </ul>
+
+</div>
+<div class="container body-content">
+    @RenderBody()
+
+    <div class="question">
+        <p id="number"> @ViewBag.Number</p>
+        <p1>@RenderSection("questname")</p1><br>
+        <p2>@RenderSection("questdescription")</p2>
+    </div>
+    <div class="audiofiles">
+
+        <div class="first-audio">
+            1.   
+            <audio id="audio1" src="~/audio/@path1"></audio>
+            <a onclick="playSound1();" id="audio">
+                <i class="fas fa-play fa-4x" style="margin-bottom:7%"></i>
+            </a>
+        </div>
+
+        <div class="second-audio">
+            2.   
+            <audio id="audio2" src="~/audio/@path2"></audio>
+            <a onclick="playSound2();" id="audio">
+                <i class="fas fa-play fa-4x" style="margin-bottom:7%"></i>
+            </a>
+        </div>
+    </div>
+
+
+    <script>
+        function playSound1() {
+            var sound = document.getElementById("audio1");
+            sound.play();
+        }
+        function playSound2() {
+            var sound = document.getElementById("audio2");
+            sound.play();
+        }
+    </script>
+
+    @RenderSection("Answers")
+
+
+    <footer>
+        <p>&copy; @DateTime.Now.Year - Agata Tokarska - Praca inżynierska "System detekcji słuchu muzycznego u dzieci"</p>
+    </footer>
+</div>
+</body>
+</html>

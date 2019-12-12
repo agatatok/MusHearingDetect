@@ -76,6 +76,10 @@ namespace MusHearingDetect.Controllers
                 ViewBag.AudioSrc = audiofile.Src;
                 ViewBag.Number = $"{id}/{AudioRepository.Audiofiles.Count}";
                 HttpContext.Session.SetInt32("questionId", (int)++questionId);
+                if (id == 14 || id == 15 || id == 16 || id == 17 || id == 18)
+                {
+                    return View("DiffQuestion", audiofile);
+                }
                 if (id == 19 || id ==20)
                 {
                     return View("SingQuestion", audiofile);
